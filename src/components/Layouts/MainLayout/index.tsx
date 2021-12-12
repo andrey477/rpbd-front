@@ -8,7 +8,7 @@ interface Props {
 
 const bem = block('main-layout');
 
-export const Index: React.FC<Props> = ({ children }) => {
+export const MainLayout: React.FC<Props> = ({ children }) => {
   return (
     <div className={bem()}>
       <Header/>

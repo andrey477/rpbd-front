@@ -1,8 +1,7 @@
 import React from "react";
-import {Router} from 'react-router-dom';
-import {history} from "./history";
-import {Provider} from "react-redux";
-import {store} from "./store/store";
+import {Switch, Redirect} from 'react-router-dom';
+import {routes} from "./constants/routes";
+import {Page} from "./containers/Page";
 
 
 interface Props {
@@ -11,12 +10,17 @@ interface Props {
 
 export const App: React.FC<Props> = () => {
   return (
-    <Provider store={store}>
-      <Router history={history}>
-        <div>
-          <button className="waves-effect deep-purple lighten-4 btn-large">Button</button>
-        </div>
-      </Router>
-    </Provider>
+    <Switch>
+      <Redirect exact from={'/'} to={'/main'}/>
+      {routes.map(({exact, component, path, layout}) => (
+        <Page
+          path={path}
+          exact={exact}
+          component={component}
+          layout={layout}
+        />
+      ))}
+      <Redirect from={'*'} to={'/'}/>
+    </Switch>
   );
 };
