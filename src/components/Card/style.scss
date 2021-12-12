@@ -1,0 +1,14 @@
+.card {
+  border: 1px solid aquamarine;
+  width: fit-content;
+
+  &__title {
+    padding: 0 8px 8px;
+    border-bottom: 1px solid aquamarine;
+  }
+
+  &__content {
+    width: 100%;
+    padding: 8px;
+  }
+}

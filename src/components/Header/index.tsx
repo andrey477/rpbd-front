@@ -9,7 +9,7 @@ const bem = block('header');
 
 export const Header: React.FC<Props> = () => {
   return (
-    <header>
+    <header className={bem()}>
       <nav>
         <div className="nav-wrapper">
           <a href="#" className="brand-logo">Logo</a>

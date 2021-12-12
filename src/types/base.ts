@@ -5,4 +5,5 @@ export interface BasePageProps {
   component: React.FC;
   layout?: React.FC;
   path: string;
+  secured: boolean;
 }

@@ -1,16 +1,18 @@
 import {Route} from "../types/route";
-import {AuthPage} from "../components/AuthPage";
 import {MainPage} from "../components/MainPage";
+import {LoginPage} from "../components/LoginPage";
 
 export const routes: Route[] = [
   {
     path: '/main',
     exact: true,
     component: MainPage,
+    secured: true,
   },
   {
-    path: '/auth',
+    path: '/login',
     exact: true,
-    component: AuthPage,
-  },
+    component: LoginPage,
+    secured: false,
+  }
 ];
