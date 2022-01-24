@@ -5,6 +5,9 @@ import {Input} from "../Input";
 import {Button} from "../Button";
 import {Card} from "../Card";
 import block from "bem-cn";
+import {store} from "../../store/store";
+import {loginUser} from "../../store/user/actions";
+import {history} from "../../history";
 import './style.scss';
 
 interface Props {
@@ -16,11 +19,14 @@ const bem = block('login-page');
 export const LoginPage: React.FC<Props> = () => {
   const { handleSubmit, values, handleChange } = useFormik({
     initialValues: {
-      login: '',
+      username: '',
       password: '',
     },
-    onSubmit: values => {
-      console.log(values)
+    onSubmit: async (values) => {
+      const response = await store.dispatch(loginUser(values));
+      if (response.payload) {
+        history.push('/main');
+      }
     }
   });
 
@@ -28,11 +34,11 @@ export const LoginPage: React.FC<Props> = () => {
     <Card title={'Авторизуйтесь в системе'} classes={bem('card')}>
       <Form handleSubmit={handleSubmit}>
         <Input
-          id={'login'}
-          name={'login'}
+          id={'username'}
+          name={'username'}
           type={'text'}
-          label={'Login'}
-          value={values.login}
+          label={'Username'}
+          value={values.username}
           onChange={handleChange}
         />
         <Input

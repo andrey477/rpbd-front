@@ -12,7 +12,6 @@ export const Presenter: React.FC<Props> = ({
   isAuth,
   secured,
 }) => {
-
   useEffect(() => {
     if (!isAuth && secured) {
       history.push('/login');

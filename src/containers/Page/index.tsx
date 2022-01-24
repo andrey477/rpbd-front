@@ -19,7 +19,7 @@ interface DispatchProps {
 export type Props = OwnProps & StateProps & DispatchProps;
 
 const mapStateToProps: MapStateToProps<StateProps, OwnProps, RootState> = ({userReducer}) => ({
-  isAuth: Boolean(userReducer.accessToken)
+  isAuth: Boolean(userReducer.data.access_token)
 });
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = ({});
 
