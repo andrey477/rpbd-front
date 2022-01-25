@@ -1,13 +1,35 @@
-.input-field input:focus + label {
-	color: #e65100 !important;
+.input-block {
+	.input-field input:focus + label {
+		color: var(--blue-darken-3) !important;
+	}
+
+	.input-field input:focus {
+		border-bottom: 1px solid var(--blue-darken-1) !important;
+		box-shadow: 0 1px 0 0 var(--blue-darken-1) !important;
+	}
+
+	.validate {
+		border-bottom: 1px solid var(--blue-darken-3) !important;
+		box-shadow: 0 1px 0 0 var(--blue-darken-3) !important;
+	}
+
+	.input-field label {
+		color: var(--blue-darken-3) !important;
+	}
 }
 
-.input-field input:focus {
-	border-bottom: 1px solid #e65100 !important;
-	box-shadow: 0 1px 0 0 #e65100 !important;
-}
-
-.validate {
-	border-bottom: 1px solid #e65100 !important;
-	box-shadow: 0 1px 0 0 #e65100 !important;
-}
+//&__input {
+//	& .input-field input:focus + label {
+//		color: #e65100 !important;
+//	}
+//
+//	& .input-field input:focus {
+//		border-bottom: 1px solid #e65100 !important;
+//		box-shadow: 0 1px 0 0 #e65100 !important;
+//	}
+//
+//	& .validate {
+//		border-bottom: 1px solid #e65100 !important;
+//		box-shadow: 0 1px 0 0 #e65100 !important;
+//	}
+//}

@@ -13,14 +13,9 @@ const bem = block('header');
 export const Header: React.FC<Props> = () => {
   return (
     <header className={bem()}>
-      <nav className={'orange darken-3'}>
-        <div className={`${bem('container')} nav-wrapper`}>
-          <div className={bem('logo')}>
-            <div className={bem('img')}>
-              <img src={logo} alt="" />
-            </div>
-            <Link to="/" className="brand-logo">VSU DRIFT</Link>
-          </div>
+      <nav className={'blue darken-3'}>
+        <div className="nav-wrapper">
+          <Link to="/" className="brand-logo">Royals vsu drift</Link>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li><Link to="#">Участники</Link></li>
             <li><Link to="#">Судьи</Link></li>

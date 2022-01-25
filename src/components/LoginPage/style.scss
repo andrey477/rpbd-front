@@ -1,5 +1,32 @@
 .login-page {
-  &__card {
-    margin: 60px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+
+
+  &__auth-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 20px;
+    background-color: var(--blue-darken-1);
+    border-radius: 5px;
+    max-height: 580px;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__form {
+    margin-top: 16px;
+    background-color: #fff;
+    padding: 40px 12px;
+    border-radius: 10px;
+  }
+
+  &__input {
+    margin-bottom: 28px;
   }
 }

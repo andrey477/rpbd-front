@@ -3,11 +3,11 @@ import {Form} from "../Form";
 import {useFormik} from "formik";
 import {Input} from "../Input";
 import {Button} from "../Button";
-import {Card} from "../Card";
 import block from "bem-cn";
 import {store} from "../../store/store";
 import {loginUser} from "../../store/user/actions";
 import {history} from "../../history";
+import {Logo} from "../ Logo";
 import './style.scss';
 
 interface Props {
@@ -31,32 +31,70 @@ export const LoginPage: React.FC<Props> = () => {
   });
 
   return (
-    <Card title={'Авторизуйтесь в системе'} classes={bem('card')}>
-      <Form handleSubmit={handleSubmit}>
-        <Input
-          id={'username'}
-          name={'username'}
-          type={'text'}
-          label={'Username'}
-          value={values.username}
-          onChange={handleChange}
+    <div className={bem()}>
+      <div className={bem('auth-form')}>
+        <Logo
+          width={200}
+          height={200}
+          classes={bem('logo')}
         />
-        <Input
-          id={'password'}
-          name={'password'}
-          type={'password'}
-          label={'Password'}
-          value={values.password}
-          onChange={handleChange}
-        />
-        <Button
-          type={'submit'}
-          name={'submit-btn'}
+        <Form
+          handleSubmit={handleSubmit}
+          classes={bem('form')}
         >
-          Войти<i className="material-icons right">send</i>
-        </Button>
-      </Form>
-    </Card>
+          <Input
+            id={'username'}
+            name={'username'}
+            type={'text'}
+            label={'Username'}
+            value={values.username}
+            onChange={handleChange}
+            classes={bem('input')}
+          />
+          <Input
+            id={'password'}
+            name={'password'}
+            type={'password'}
+            label={'Password'}
+            value={values.password}
+            onChange={handleChange}
+            classes={bem('input')}
+          />
+          <Button
+            type={'submit'}
+            name={'submit-btn'}
+          >
+            Войти<i className="material-icons right">send</i>
+          </Button>
+        </Form>
+      </div>
+    </div>
+    // <Card title={'Авторизуйтесь в системе'} classes={bem('card')}>
+    //   <Form handleSubmit={handleSubmit}>
+    //     <Input
+    //       id={'username'}
+    //       name={'username'}
+    //       type={'text'}
+    //       label={'Username'}
+    //       value={values.username}
+    //       onChange={handleChange}
+    //     />
+    //     <Input
+    //       id={'password'}
+    //       name={'password'}
+    //       type={'password'}
+    //       label={'Password'}
+    //       value={values.password}
+    //       onChange={handleChange}
+    //     />
+    //     <Button
+    //       type={'submit'}
+    //       name={'submit-btn'}
+    //     >
+    //       Войти<i className="material-icons right">send</i>
+    //     </Button>
+    //   </Form>
+    // </Card>
 
   )
 }

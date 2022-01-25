@@ -3,6 +3,7 @@ import {Switch, Redirect} from 'react-router-dom';
 import {routes} from "./constants/routes";
 import {Page} from "./containers/Page";
 import './assets/base.scss';
+import './assets/colors.scss';
 
 
 interface Props {
