@@ -53,7 +53,7 @@ export const LoginPage: React.FC<Props> = () => {
           type={'submit'}
           name={'submit-btn'}
         >
-          Submit<i className="material-icons right">send</i>
+          Войти<i className="material-icons right">send</i>
         </Button>
       </Form>
     </Card>

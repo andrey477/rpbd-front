@@ -11,7 +11,7 @@ export const Button: React.FC<Props> = ({
   return (
     <button
       {...rest}
-      className="btn waves-effect waves-light"
+      className="btn waves-effect orange darken-2"
     >
       {children}
     </button>

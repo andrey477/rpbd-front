@@ -1,0 +1,16 @@
+.header {
+	height: 10vh;
+	&__img {
+		display: inline-block;
+		margin-top: 4px;
+		& img {
+			width: 60px;
+			height: 60px;
+		}
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+	}
+}
