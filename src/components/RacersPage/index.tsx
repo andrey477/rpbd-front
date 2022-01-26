@@ -1,8 +1,11 @@
 import React from 'react';
-import './style.scss';
 import block from "bem-cn";
 import {Table} from "../Table";
-import {data, racerColumn} from "./mock";
+import {PageWrapper} from "../PageWrapper";
+import {useRacersPage} from "./useRacersPage";
+import {columnsConfig} from "./columnsConfig";
+import {Loader} from "../Loader";
+import './style.scss';
 
 interface Props {
 
@@ -11,9 +14,15 @@ interface Props {
 const bem = block('racers-page');
 
 export const RacersPage: React.FC<Props> = () => {
+	const {tableData, loading} = useRacersPage()
+
   return (
-    <div>
-			<Table data={data} columnsConfig={racerColumn}/>
-		</div>
+		<PageWrapper>
+			<div className={bem()}>
+				{loading ? <Loader/> :
+					<Table data={tableData} columnsConfig={columnsConfig}/>
+				}
+			</div>
+		</PageWrapper>
   );
 }

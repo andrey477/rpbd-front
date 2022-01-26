@@ -27,4 +27,17 @@ export declare namespace Racers {
 		totalElements: number;
 		page: number;
 	}
+
+	interface TableData {
+		id: string;
+		name: string;
+		surname: string;
+		city: string;
+		email: string;
+		age: number;
+		brand: string;
+		model: string;
+		horsepower: number;
+		team_name: string;
+	}
 }
