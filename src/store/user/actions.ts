@@ -18,3 +18,16 @@ export const loginUser = createAsyncThunk(
 		return null;
 	}
 );
+
+export const logoutUser = createAsyncThunk(
+	'users/logoutUser',
+	async (): Promise<void> => {
+		try {
+			const apiService = ApiService();
+			await apiService.post('/api/auth/logout');
+		}
+		catch (err) {
+			console.error(err)
+		}
+	}
+)

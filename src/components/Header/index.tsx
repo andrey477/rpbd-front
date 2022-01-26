@@ -1,27 +1,24 @@
-import React from "react";
-import block from "bem-cn";
-import {Link} from 'react-router-dom';
-import logo from '../../images/logo.png';
-import './style.scss';
+import React from 'react';
+import {MapDispatchToProps, connect, MapStateToProps} from "react-redux";
+import {Presenter} from './Presenter';
+import {RootState} from "../../store/root";
 
-interface Props {
-
+interface OwnProps {
 }
 
-const bem = block('header');
+interface StateProps {
+  isAuth: boolean;
+}
 
-export const Header: React.FC<Props> = () => {
-  return (
-    <header className={bem()}>
-      <nav className={'blue darken-3'}>
-        <div className="nav-wrapper">
-          <Link to="/" className="brand-logo">Royals vsu drift</Link>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li><Link to="/racers">Участники</Link></li>
-            <li><Link to="#">Судьи</Link></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-  );
-};
+interface DispatchProps {
+}
+
+export type Props = OwnProps & StateProps & DispatchProps;
+
+const mapStateToProps: MapStateToProps<StateProps, OwnProps, RootState> = ({userReducer}) => ({
+  isAuth: Boolean(userReducer.data.access_token)
+});
+
+const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = ({  });
+
+export const Header = connect(mapStateToProps, mapDispatchToProps)(Presenter);
