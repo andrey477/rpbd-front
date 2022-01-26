@@ -1,6 +1,7 @@
 import {Route} from "../types/route";
 import {MainPage} from "../components/MainPage";
 import {LoginPage} from "../components/LoginPage";
+import {RacersPage} from "../components/RacersPage";
 
 export const routes: Route[] = [
   {
@@ -14,5 +15,11 @@ export const routes: Route[] = [
     exact: true,
     component: LoginPage,
     secured: false,
+  },
+  {
+    path: '/racers',
+    exact: true,
+    component: RacersPage,
+    secured: true,
   }
 ];

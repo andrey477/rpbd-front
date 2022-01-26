@@ -17,7 +17,7 @@ export const Header: React.FC<Props> = () => {
         <div className="nav-wrapper">
           <Link to="/" className="brand-logo">Royals vsu drift</Link>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li><Link to="#">Участники</Link></li>
+            <li><Link to="/racers">Участники</Link></li>
             <li><Link to="#">Судьи</Link></li>
           </ul>
         </div>
