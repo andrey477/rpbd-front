@@ -1,6 +1,9 @@
 import React from 'react';
 import block from "bem-cn";
 import {TableType} from "../../types/table";
+import {Table as MaterialTable} from "@material-ui/core";
+import {TableHead} from "./TableHead";
+import {TableBody} from "./TableBody/TableBody";
 
 interface Props<T> {
 	data: T[];
@@ -14,23 +17,9 @@ export const Table = <T extends Object = {}>({
 	columnsConfig
 }: React.PropsWithChildren<Props<T>>) => {
   return (
-		<table className="highlight">
-			<thead>
-			<tr>
-				{columnsConfig.map(({title}) => (
-					<th>{title}</th>
-				))}
-			</tr>
-			</thead>
-			<tbody>
-			{data.map(item => (
-				<tr>
-					{columnsConfig.map(({code}) => (
-						<td>{item[code]}</td>
-					))}
-				</tr>
-			))}
-			</tbody>
-		</table>
+		<MaterialTable>
+			<TableHead columnsConfig={columnsConfig}/>
+			<TableBody data={data} columnsConfig={columnsConfig}/>
+		</MaterialTable>
   );
 }
