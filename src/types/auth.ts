@@ -28,4 +28,16 @@ export declare namespace Auth {
 			expires_in: number;
 		}
 	}
+
+	namespace Registration {
+		interface Request {
+			username: string;
+			password: string;
+			name: string;
+			surname: string;
+			city: string;
+			email: string;
+			age: number;
+		}
+	}
 }

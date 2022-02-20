@@ -15,7 +15,7 @@ export const MainPage: React.FC<Props> = () => {
 			<div className={bem()}>
         <div className={bem('task')}>
           <h1 className={bem('title')}>Задание</h1>
-          <hr/>
+          <hr className={bem('line')}/>
           <p className={bem('text')}>
             Тема GP дрифт, регламент на проведение соревнований в интернете есть, если что будет не понятно - пишите.
             Задача - регистрация пилотов, учет эко-сбора, оплата оргвзноса (цена до соревнования меньше, чем

@@ -1,21 +1,22 @@
-import React, {ButtonHTMLAttributes, DetailedHTMLProps} from "react";
+import React from "react";
+import {Button as MaterialButton, ButtonProps} from "@material-ui/core";
 
-interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  color?: string;
+interface Props extends ButtonProps {
 }
 
 export const Button: React.FC<Props> = ({
   children,
-  color = 'blue darken-1',
+  variant="contained",
+  color="primary",
   ...rest
 }) => {
-  const classes = `btn waves-effect ${color}`;
   return (
-    <button
+    <MaterialButton
+      variant={variant}
+      color={color}
       {...rest}
-      className={classes}
     >
       {children}
-    </button>
+    </MaterialButton>
   )
 }

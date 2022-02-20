@@ -1,7 +1,7 @@
 import {TableType} from "../../types/table";
-import {Racers} from "../../types/racers";
+import {Users} from "../../types/users";
 
-export const columnsConfig: TableType.Column<Racers.TableData>[] = [
+export const columnsConfig: TableType.Column<Users.TableData>[] = [
 	{
 		id: 'name',
 		code: 'name',

@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
-import {Racers} from "../../types/racers";
+import {Users} from "../../types/users";
 import {getAllRacers} from "../../api/racers";
 import {prepareTableData} from "./helper";
 
 export const useRacersPage = () => {
-	const [data, setData] = useState<Racers.All | null>(null);
-	const [tableData, setTableData] = useState<Racers.TableData[]>([])
+	const [data, setData] = useState<Users.All | null>(null);
+	const [tableData, setTableData] = useState<Users.TableData[]>([])
 	const [loading, setLoading] = useState<boolean>(false);
 
 	useEffect(() => {

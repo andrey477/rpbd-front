@@ -1,30 +1,27 @@
-import {Racers} from "./racers";
-/*
-* Всего будет три роли: racer, judge, admin
-* admin - открыает соревнование, регистрирует судей
-*	racer - есть возможно
-* */
+import {Racer} from "./racer";
+import {Stage} from "../constants/stage";
+import {Race} from "./race";
+import {Total} from "./total";
 
-
-/*
-* Модель соревнования.
-*
-* */
 export declare namespace Competition {
-	interface Data {
-		racers: Racers.RacerData[]; // массив гонщиков
-		stage: number; // этап соревнований
-		isOpenRecord: boolean; // открыт ли приём участников. Если открыт, то stage = 0
-		judges: string[]; // массив id судей. Судей должно быть трое
-		isOpen: boolean; // открыто ли данное соревнование
+	interface Request {
+		name: string;
+		attempts: number;
+	}
+
+	interface BodyCompetition {
+		name: string;
+		racers: Racer.Data[];
+		stage: Stage;
+		isOpen: boolean;
+		race_1: Race.Data[]; // информация о заездах участников 1 этапа
+		race_2: Race.Data[]; // информация о заездах участников 1 этапа
+		race_3: Race.Data[]; // информация о заездах участников 1 этапа
+		total: Total.Data[]; // итоги участников
+		attempts: number; // сколько позволено попыток в данном соревновании
+	}
+
+	interface Response {
+		content: BodyCompetition[];
 	}
 }
-
-/*
-* Модель гонщика
-* */
-// export declare namespace Racer {
-// 	interface Data {
-//
-// 	}
-// }

@@ -1,20 +1,18 @@
 .header {
-
-	&__nav {
-		padding: 0 20px;
-	}
-
-	&__img {
-		display: inline-block;
-		margin-top: 4px;
-		& img {
-			width: 60px;
-			height: 60px;
-		}
-	}
-
-	&__container {
+	&__menu {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__menu-item {
+		padding: 8px;
+		list-style: none;
+		margin-right: 12px;
+	}
+
+	&__menu-link {
+		text-decoration: none;
+		color: #fff;
 	}
 }

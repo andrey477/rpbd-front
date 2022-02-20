@@ -1,5 +1,6 @@
 import React from 'react';
 import block from "bem-cn";
+import {CircularProgress} from "@material-ui/core";
 import './style.scss';
 
 interface Props {
@@ -9,21 +10,5 @@ interface Props {
 const bem = block('loader');
 
 export const Loader: React.FC<Props> = () => {
-  return (
-    <div className={bem()}>
-			<div className="preloader-wrapper big active">
-				<div className="spinner-layer spinner-blue-only">
-					<div className="circle-clipper left">
-						<div className="circle"/>
-					</div>
-					<div className="gap-patch">
-						<div className="circle"/>
-					</div>
-					<div className="circle-clipper right">
-						<div className="circle"/>
-					</div>
-				</div>
-			</div>
-		</div>
-  );
+	return <CircularProgress disableShrink />;
 }

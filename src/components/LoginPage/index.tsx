@@ -10,6 +10,7 @@ import {loginUser} from "../../store/user/actions";
 import {history} from "../../history";
 import {Logo} from "../ Logo";
 import './style.scss';
+import {useStyle} from "./useStyle";
 
 interface Props {
 
@@ -18,6 +19,7 @@ interface Props {
 const bem = block('login-page');
 
 export const LoginPage: React.FC<Props> = () => {
+  const classes = useStyle();
   const { handleSubmit, values, handleChange } = useFormik({
     initialValues: {
       username: '',
@@ -50,7 +52,7 @@ export const LoginPage: React.FC<Props> = () => {
             label={'Username'}
             value={values.username}
             onChange={handleChange}
-            classes={bem('input')}
+            classes={classes}
           />
           <Input
             id={'password'}
@@ -59,18 +61,21 @@ export const LoginPage: React.FC<Props> = () => {
             label={'Password'}
             value={values.password}
             onChange={handleChange}
-            classes={bem('input')}
+            classes={classes}
           />
           <div className={bem('btn-group')}>
             <Button
               type={'submit'}
               name={'submit-btn'}
             >
-              Войти<i className="material-icons right">send</i>
+              Войти<i className={bem('icon').mix('material-icons right')}>send</i>
             </Button>
-            <div>
-              <Link to="/registration">Регистрация</Link>
-            </div>
+            <Button variant={'text'}>
+              <Link
+                className={bem('link')}
+                to="/registration"
+              >Регистрация</Link>
+            </Button>
           </div>
         </Form>
       </div>

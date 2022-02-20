@@ -24,6 +24,8 @@
     background-color: #fff;
     padding: 40px 12px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
   }
 
   &__input {
@@ -34,5 +36,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__icon {
+    display: inline-block;
+    margin-left: 8px;
   }
 }

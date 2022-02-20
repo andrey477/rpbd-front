@@ -1,5 +1,5 @@
-export declare namespace Racers {
-	interface RacerData {
+export declare namespace Users {
+	interface UserData {
 		id: string;
 		person: {
 			id: string;
@@ -23,7 +23,7 @@ export declare namespace Racers {
 	}
 
 	interface All {
-		content: RacerData[];
+		content: UserData[];
 		totalElements: number;
 		page: number;
 	}

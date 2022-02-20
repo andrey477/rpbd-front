@@ -1,9 +1,9 @@
-import {Racers} from "../../types/racers";
+import {Users} from "../../types/users";
 
-export const prepareTableData = (data: Racers.All | null): Racers.TableData[] => {
-	const tableData: Racers.TableData[] = [];
+export const prepareTableData = (data: Users.All | null): Users.TableData[] => {
+	const tableData: Users.TableData[] = [];
 	data && data.content.forEach(({person, team, vehicle}) => {
-		const item: Racers.TableData = {
+		const item: Users.TableData = {
 			id: person.id,
 			age: person.age,
 			brand: vehicle.brand,

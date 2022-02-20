@@ -1,0 +1,17 @@
+.competition-page {
+	&__buttons {
+		display: flex;
+		justify-content: flex-end;
+		margin: 12px 12px 0 0;
+	}
+
+	&__empty {
+		padding: 20px;
+		width: 100%;
+		text-align: center;
+	}
+
+	&__title {
+		padding: 16px 0;
+	}
+}
