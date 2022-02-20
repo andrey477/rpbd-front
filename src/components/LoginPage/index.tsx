@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import {Form} from "../Form";
 import {useFormik} from "formik";
 import {Input} from "../Input";
@@ -60,41 +61,19 @@ export const LoginPage: React.FC<Props> = () => {
             onChange={handleChange}
             classes={bem('input')}
           />
-          <Button
-            type={'submit'}
-            name={'submit-btn'}
-          >
-            Войти<i className="material-icons right">send</i>
-          </Button>
+          <div className={bem('btn-group')}>
+            <Button
+              type={'submit'}
+              name={'submit-btn'}
+            >
+              Войти<i className="material-icons right">send</i>
+            </Button>
+            <div>
+              <Link to="/registration">Регистрация</Link>
+            </div>
+          </div>
         </Form>
       </div>
     </div>
-    // <Card title={'Авторизуйтесь в системе'} classes={bem('card')}>
-    //   <Form handleSubmit={handleSubmit}>
-    //     <Input
-    //       id={'username'}
-    //       name={'username'}
-    //       type={'text'}
-    //       label={'Username'}
-    //       value={values.username}
-    //       onChange={handleChange}
-    //     />
-    //     <Input
-    //       id={'password'}
-    //       name={'password'}
-    //       type={'password'}
-    //       label={'Password'}
-    //       value={values.password}
-    //       onChange={handleChange}
-    //     />
-    //     <Button
-    //       type={'submit'}
-    //       name={'submit-btn'}
-    //     >
-    //       Войти<i className="material-icons right">send</i>
-    //     </Button>
-    //   </Form>
-    // </Card>
-
   )
 }

@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {User} from "./type";
 import {loginUser, logoutUser} from "./actions";
-import {history} from "../../history";
+import {Roles} from "../../constants/roles";
 
 const initialState: User.InitState = {
   data: {
@@ -9,6 +9,7 @@ const initialState: User.InitState = {
       id: '',
       username: '',
       password: '',
+      role: Roles.ADMIN,
       person: {
         id: '',
         name: '',
@@ -35,6 +36,7 @@ export const userReducer = createSlice({
     builder.addCase(loginUser.fulfilled, (state, action) => {
       if (action.payload) {
         state.data = action.payload;
+        state.data.user.role = Roles.ADMIN;
       }
     });
     builder.addCase(logoutUser.fulfilled, (state, action) => {

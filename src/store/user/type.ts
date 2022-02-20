@@ -1,3 +1,5 @@
+import {Roles} from "../../constants/roles";
+
 export declare namespace User {
   interface InitState {
     data: {
@@ -5,6 +7,7 @@ export declare namespace User {
         id: string;
         username: string;
         password: string;
+        role: Roles;
         person: {
           id: string;
           name: string;

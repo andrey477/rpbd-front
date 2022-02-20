@@ -18,9 +18,10 @@ export const App: React.FC<Props> = () => {
         <Page
           key={`${index}${props.path}`}
           {...props}
+          role={props.role}
         />
       ))}
-      <Redirect from={'*'} to={'/'}/>
+      <Redirect from={'*'} to={'/error-page'}/>
     </Switch>
   );
 };

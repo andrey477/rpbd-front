@@ -1,3 +1,5 @@
+import {Roles} from "../constants/roles";
+
 export declare namespace Auth {
 	namespace Login {
 		interface Request {
@@ -10,6 +12,7 @@ export declare namespace Auth {
 				id: string;
 				username: string;
 				password: string;
+				role: Roles;
 				person: {
 					id: string;
 					name: string;

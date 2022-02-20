@@ -1,6 +1,6 @@
 import React from "react";
 import block from "bem-cn";
-import {Header} from "../../Header";
+import {Header} from "../../../containers/Header";
 import './style.scss';
 
 interface Props {

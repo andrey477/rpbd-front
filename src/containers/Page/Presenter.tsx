@@ -11,10 +11,16 @@ export const Presenter: React.FC<Props> = ({
   exact,
   isAuth,
   secured,
+  userRole ,
+  role,
 }) => {
   useEffect(() => {
     if (!isAuth && secured) {
       history.push('/login');
+    }
+
+    if (role && userRole !== role) {
+      history.push('/error-page');
     }
   }, [isAuth]);
 
