@@ -9,8 +9,8 @@ import {store} from "../../store/store";
 import {loginUser} from "../../store/user/actions";
 import {history} from "../../history";
 import {Logo} from "../ Logo";
-import './style.scss';
 import {useStyle} from "./useStyle";
+import './style.scss';
 
 interface Props {
 

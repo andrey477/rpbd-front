@@ -37,7 +37,7 @@ export declare namespace Auth {
 			surname: string;
 			city: string;
 			email: string;
-			age: number;
+			age: string;
 		}
 	}
 }
