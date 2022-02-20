@@ -10,3 +10,16 @@ export const createCompetition = async (body: Competition.Request): Promise<void
 		console.error(err);
 	}
 }
+
+export const competitions = async (): Promise<Competition.Response[]> => {
+	try {
+		const apiService = ApiService();
+		const { data } = await apiService.get<Competition.Response[]>('/competitions');
+		return data;
+	}
+	catch (err) {
+		console.error(err)
+	}
+
+	return [];
+}

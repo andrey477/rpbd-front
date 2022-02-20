@@ -1,6 +1,7 @@
 import {Users} from "../types/users";
 import {ApiService} from "../services/ApiService";
 
+// старый запрос
 export const getAllRacers = async (): Promise<Users.All | null> => {
 	try {
 		const apiService = ApiService();
@@ -13,3 +14,4 @@ export const getAllRacers = async (): Promise<Users.All | null> => {
 
 	return null
 }
+
