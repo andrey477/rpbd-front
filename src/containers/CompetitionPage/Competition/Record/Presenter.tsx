@@ -36,7 +36,7 @@ export const Presenter: React.FC<Props> = ({
 
 	return (
 		<div className={bem()}>
-			<Typography variant={'h4'}>{title}</Typography>
+			<Typography variant={'h4'} align={'center'}>{title}</Typography>
 			<Form
 				handleSubmit={handleSubmit}
 				classes={bem('form')}
