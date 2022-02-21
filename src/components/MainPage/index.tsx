@@ -29,6 +29,7 @@ export const MainPage: React.FC<Props> = () => {
             суммируются, определяя победителя сезона в данном виде спорта.
           </p>
         </div>
+
 			</div>
 		</PageWrapper>
 	)
