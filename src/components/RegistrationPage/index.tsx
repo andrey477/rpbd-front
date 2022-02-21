@@ -4,10 +4,9 @@ import {Input} from "../Input";
 import {Form} from "../Form";
 import {useFormik} from "formik";
 import {store} from "../../store/store";
-import {loginUser, registration} from "../../store/user/actions";
+import {registration} from "../../store/user/actions";
 import {history} from "../../history";
 import {Auth} from "../../types/auth";
-import {useStyle} from "./useStyle";
 import {Logo} from "../ Logo";
 import './style.scss';
 import {Button} from "../Button";
@@ -20,8 +19,6 @@ interface Props {
 const bem = block('registration');
 
 export const RegistrationPage: React.FC<Props> = () => {
-	const classes = useStyle();
-
 	const { handleSubmit, values, handleChange } = useFormik<Auth.Registration.Request>({
 		initialValues: {
 			username: '',
@@ -59,7 +56,6 @@ export const RegistrationPage: React.FC<Props> = () => {
 						label={'Username'}
 						value={values.username}
 						onChange={handleChange}
-						classes={classes}
 					/>
 					<Input
 						id={'password'}
@@ -68,7 +64,6 @@ export const RegistrationPage: React.FC<Props> = () => {
 						label={'Password'}
 						value={values.password}
 						onChange={handleChange}
-						classes={classes}
 					/>
 					<Input
 						id={'age'}
@@ -77,7 +72,6 @@ export const RegistrationPage: React.FC<Props> = () => {
 						label={'age'}
 						value={values.age}
 						onChange={handleChange}
-						classes={classes}
 					/>
 					<Input
 						id={'city'}
@@ -86,7 +80,6 @@ export const RegistrationPage: React.FC<Props> = () => {
 						label={'city'}
 						value={values.city}
 						onChange={handleChange}
-						classes={classes}
 					/>
 					<Input
 						id={'name'}
@@ -95,7 +88,6 @@ export const RegistrationPage: React.FC<Props> = () => {
 						label={'name'}
 						value={values.name}
 						onChange={handleChange}
-						classes={classes}
 					/>
 					<Input
 						id={'surname'}
@@ -104,7 +96,6 @@ export const RegistrationPage: React.FC<Props> = () => {
 						label={'surname'}
 						value={values.surname}
 						onChange={handleChange}
-						classes={classes}
 					/>
 					<Input
 						id={'email'}
@@ -113,7 +104,6 @@ export const RegistrationPage: React.FC<Props> = () => {
 						label={'email'}
 						value={values.email}
 						onChange={handleChange}
-						classes={classes}
 					/>
 					<div className={bem('btn-group')}>
 						<Button

@@ -9,7 +9,6 @@ import {store} from "../../store/store";
 import {loginUser} from "../../store/user/actions";
 import {history} from "../../history";
 import {Logo} from "../ Logo";
-import {useStyle} from "./useStyle";
 import './style.scss';
 
 interface Props {
@@ -19,7 +18,6 @@ interface Props {
 const bem = block('login-page');
 
 export const LoginPage: React.FC<Props> = () => {
-  const classes = useStyle();
   const { handleSubmit, values, handleChange } = useFormik({
     initialValues: {
       username: '',
@@ -52,7 +50,6 @@ export const LoginPage: React.FC<Props> = () => {
             label={'Username'}
             value={values.username}
             onChange={handleChange}
-            classes={classes}
           />
           <Input
             id={'password'}
@@ -61,7 +58,6 @@ export const LoginPage: React.FC<Props> = () => {
             label={'Password'}
             value={values.password}
             onChange={handleChange}
-            classes={classes}
           />
           <div className={bem('btn-group')}>
             <Button

@@ -10,6 +10,7 @@ import {ModalCompetition} from "./ModalCompetition";
 import {Divider, Typography} from "@material-ui/core";
 import {competitionMock} from "../../mock/competitionMock";
 import './style.scss';
+import {Competition} from "./Competition";
 
 const bem = block('competition-page');
 
@@ -37,9 +38,9 @@ export const Presenter: React.FC<Props> = ({ role  }) => {
 				<Divider/>
 				{!competitions.length ? <div className={bem('empty')}>Список соревнований пуст</div> :
 					<Accordion>
-						{competitions.map(({name}) => (
-							<AccordionItem title={name} key={name}>
-								test
+						{competitions.map(competition => (
+							<AccordionItem title={competition.name} key={competition.id}>
+								<Competition competition={competition}/>
 							</AccordionItem>
 						))}
 					</Accordion>

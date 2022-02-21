@@ -1,6 +1,6 @@
 export declare namespace Vehicle {
 	interface Data {
-		id: string;
+		id?: string;
 		brand: string;
 		model: string;
 		horsepower: number;

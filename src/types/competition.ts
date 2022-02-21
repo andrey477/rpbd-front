@@ -10,6 +10,7 @@ export declare namespace Competition {
 	}
 
 	interface BodyCompetition {
+		id: string;
 		name: string;
 		racers: Racer.Data[];
 		stage: Stage;
@@ -23,5 +24,18 @@ export declare namespace Competition {
 
 	interface Response {
 		content: BodyCompetition[];
+	}
+
+	namespace Table {
+		interface Column {
+			name: string;
+			code: string;
+			isSort: boolean;
+		}
+	}
+
+	interface AddRacer {
+		competitionId: string;
+		racer: Racer.Data;
 	}
 }

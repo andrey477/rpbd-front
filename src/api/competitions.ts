@@ -23,3 +23,13 @@ export const competitions = async (): Promise<Competition.Response[]> => {
 
 	return [];
 }
+
+export const addRacer = async (body: Competition.AddRacer): Promise<void> => {
+	try {
+		const apiService = ApiService();
+		const { data } = await apiService.post('/competition/add-racer', body);
+	}
+	catch (err) {
+		console.error(err)
+	}
+}

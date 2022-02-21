@@ -3,6 +3,7 @@ import {Stage} from "../constants/stage";
 
 export const competitionMock: Competition.BodyCompetition[] = [
 	{
+		id: 'jfsdnjfnsjdfnjnfsjn',
 		name: 'Тестовое соревнование',
 		attempts: 2,
 		isOpen: true,
