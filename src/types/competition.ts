@@ -2,6 +2,7 @@ import {Racer} from "./racer";
 import {Stage} from "../constants/stage";
 import {Race} from "./race";
 import {Total} from "./total";
+import {Status} from "../constants/status";
 
 export declare namespace Competition {
 	interface Request {
@@ -37,5 +38,17 @@ export declare namespace Competition {
 	interface AddRacer {
 		competitionId: string;
 		racer: Racer.Data;
+	}
+
+	interface FetchRace {
+		racerId: string;
+		competitionId: string;
+		rating: number[];
+	}
+
+	interface FetchStatus {
+		racerId: string;
+		competitionId: string;
+		status: Status;
 	}
 }

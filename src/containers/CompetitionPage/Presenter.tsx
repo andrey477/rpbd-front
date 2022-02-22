@@ -9,14 +9,16 @@ import {AccordionItem} from "../../components/AccordionItem";
 import {ModalCompetition} from "./ModalCompetition";
 import {Divider, Typography} from "@material-ui/core";
 import {competitionMock} from "../../mock/competitionMock";
-import './style.scss';
 import {Competition} from "./Competition";
+import './style.scss';
+import {useCompetitionPage} from "./useCompetitionPage";
 
 const bem = block('competition-page');
 
 export const Presenter: React.FC<Props> = ({ role  }) => {
-	const competitions = competitionMock;
 	const [open, setOpen] = useState<boolean>(false);
+	const competitions = competitionMock;
+	const {data} = useCompetitionPage();
 
 	const handleClickOpen = () => {
 		setOpen(true);
