@@ -1,11 +1,21 @@
 import React from 'react';
+import {Competition} from "../../../../types/competition";
+import {TableCell, TableHead as MaterialTableHead, TableRow} from "@material-ui/core";
 
 interface Props {
+  columns: Competition.Table.Column[];
 
 }
 
-export const TableHead: React.FC<Props> = () => {
+export const TableHead: React.FC<Props> = ({columns}) => {
   return (
-    <div></div>
+    <MaterialTableHead>
+      <TableRow>
+        {columns.map(({name}) => (
+          <TableCell
+          >{name}</TableCell>
+        ))}
+      </TableRow>
+    </MaterialTableHead>
   );
 }
