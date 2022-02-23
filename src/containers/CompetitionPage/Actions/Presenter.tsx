@@ -10,6 +10,7 @@ import {Status} from "../../../constants/status";
 import {Competition} from "../../../types/competition";
 import {getRating} from "../../../utils";
 import {fetchRace, fetchStatus} from "../../../api/competitions";
+import {competitionMock1} from "../../../mock/testMock";
 
 const bem = block('action');
 
@@ -19,6 +20,7 @@ export const Presenter: React.FC<Props> = ({
 	competitionId,
 	racerId,
 	variantTable = VariantTable.STAGE,
+	setCompetition,
 }) => {
 	const isList = variantTable === VariantTable.LIST;
 	const classes = useStyle();
@@ -40,7 +42,15 @@ export const Presenter: React.FC<Props> = ({
 			status: event.currentTarget.value as Status
 		};
 		console.log(body);
+		console.log(setCompetition)
 		const response = await fetchStatus(body);
+		if (setCompetition) {
+			console.log('set')
+			setCompetition(competitionMock1);
+		}
+		// if (response && setCompetition) {
+		// 	setCompetition(competitionMock1);
+		// }
 	}
 
 	return (

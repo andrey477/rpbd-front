@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Dispatch, SetStateAction} from 'react';
 import {MapDispatchToProps, connect, MapStateToProps} from "react-redux";
 import {Presenter} from './Presenter';
 import {RootState} from "../../../store/root";
@@ -7,6 +7,7 @@ import {Roles} from "../../../constants/roles";
 
 interface OwnProps {
 	competition: CompetitionType.BodyCompetition;
+	setCompetition: Dispatch<SetStateAction<CompetitionType.BodyCompetition[]>>
 }
 
 interface StateProps {

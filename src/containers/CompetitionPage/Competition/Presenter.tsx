@@ -14,19 +14,20 @@ import {Button} from "../../../components/Button";
 import {Stage as StageVariant} from "../../../constants/stage";
 import {nextStage} from "../../../api/competitions";
 import './style.scss';
+import {isDisable, mapStageToNumber} from "./helper";
 
 const bem = block('competition');
 
-export const Presenter: React.FC<Props> = ({competition, role}) => {
-	const initValue = role === Roles.ADMIN ? 1 : 0;
-	const [value, setValue] = useState<number>(initValue);
-
+export const Presenter: React.FC<Props> = ({competition, role, setCompetition}) => {
 	const {
 		stage,
 		attempts,
 		name,
 		id
 	} = competition;
+
+	const initValue = mapStageToNumber[stage];
+	const [value, setValue] = useState<number>(initValue);
 
 	const buttonText = stage === StageVariant.stage_3 ? 'Завершить соревнование' : 'Следующий этап';
 
@@ -51,10 +52,10 @@ export const Presenter: React.FC<Props> = ({competition, role}) => {
 				<Tab label='Запись на участие' disabled={role === Roles.ADMIN}/>
 				<Tab label='Список заявок'/>
 				{/*<Tab label="Квалификация"/>*/}
-				<Tab label="1 ЭТАП"/>
-				<Tab label="2 ЭТАП"/>
-				<Tab label="3 ЭТАП"/>
-				<Tab label="ИТОГ"/>
+				<Tab label="1 ЭТАП" disabled={isDisable(2, stage)}/>
+				<Tab label="2 ЭТАП" disabled={isDisable(3, stage)}/>
+				<Tab label="3 ЭТАП" disabled={isDisable(4, stage)}/>
+				<Tab label="ИТОГ" disabled={isDisable(5, stage)}/>
 			</Tabs>
 			<div className={bem('panels')}>
 				<TabPanel index={0} value={value}>
@@ -69,6 +70,7 @@ export const Presenter: React.FC<Props> = ({competition, role}) => {
 						competition={competition}
 						columns={listColumns}
 						variantTable={VariantTable.LIST}
+						setCompetition={setCompetition}
 					/>
 				</TabPanel>
 				<TabPanel index={2} value={value}>
@@ -91,6 +93,7 @@ export const Presenter: React.FC<Props> = ({competition, role}) => {
 						competition={competition}
 						columns={totalColumns}
 						variantTable={VariantTable.TOTAL}
+						setCompetition={setCompetition}
 					/>
 				</TabPanel>
 			</div>

@@ -8,17 +8,15 @@ import {Accordion} from "../../components/Accordion";
 import {AccordionItem} from "../../components/AccordionItem";
 import {ModalCompetition} from "./ModalCompetition";
 import {Divider, Typography} from "@material-ui/core";
-import {competitionMock} from "../../mock/competitionMock";
 import {Competition} from "./Competition";
-import './style.scss';
 import {useCompetitionPage} from "./useCompetitionPage";
+import './style.scss';
 
 const bem = block('competition-page');
 
 export const Presenter: React.FC<Props> = ({ role  }) => {
 	const [open, setOpen] = useState<boolean>(false);
-	const competitions = competitionMock;
-	const {data} = useCompetitionPage();
+	const {data, setData} = useCompetitionPage();
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -38,11 +36,11 @@ export const Presenter: React.FC<Props> = ({ role  }) => {
 					>Список соревнований</Typography>
 				</div>
 				<Divider/>
-				{!competitions.length ? <div className={bem('empty')}>Список соревнований пуст</div> :
+				{!data.length ? <div className={bem('empty')}>Список соревнований пуст</div> :
 					<Accordion>
-						{competitions.map(competition => (
-							<AccordionItem title={competition.name} key={competition.id}>
-								<Competition competition={competition}/>
+						{data.map(data => (
+							<AccordionItem title={data.name} key={data.id}>
+								<Competition competition={data} setCompetition={setData}/>
 							</AccordionItem>
 						))}
 					</Accordion>

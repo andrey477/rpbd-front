@@ -1,8 +1,8 @@
 import {Competition} from "../types/competition";
-import {Stage} from "../constants/stage";
 import {Status} from "../constants/status";
+import {Stage} from "../constants/stage";
 
-export const competitionMock: Competition.BodyCompetition[] = [
+export const competitionMock1: Competition.BodyCompetition[] = [
 	{
 		id: 'jfsdnjfnsjdfnjnfsjn',
 		name: 'Тестовое соревнование',
@@ -22,7 +22,7 @@ export const competitionMock: Competition.BodyCompetition[] = [
 					email: "iivanov@mail.com",
 					age: 31,
 				},
-				status: Status.APPROVED,
+				status: Status.SENT,
 				race: {
 					attempts: 2,
 					rating: {
@@ -48,7 +48,7 @@ export const competitionMock: Competition.BodyCompetition[] = [
 					email: "iivanov@mail.com",
 					age: 31,
 				},
-				status: Status.REJECTED,
+				status: Status.SENT,
 				race: {
 					attempts: 2,
 					rating: {
@@ -113,7 +113,7 @@ export const competitionMock: Competition.BodyCompetition[] = [
 					email: "iivanov@mail.com",
 					age: 31,
 				},
-				status: Status.APPROVED,
+				status: Status.SENT,
 				race: {
 					attempts: 2,
 					rating: {
@@ -139,7 +139,7 @@ export const competitionMock: Competition.BodyCompetition[] = [
 					email: "iivanov@mail.com",
 					age: 31,
 				},
-				status: Status.REJECTED,
+				status: Status.SENT,
 				race: {
 					attempts: 2,
 					rating: {
@@ -182,7 +182,7 @@ export const competitionMock: Competition.BodyCompetition[] = [
 				}
 			},
 		],
-		stage: Stage.stage_2,
+		stage: Stage.RECORD,
 		total: [],
 	}
 ]
