@@ -144,8 +144,8 @@ export const competitionMock: Competition.BodyCompetition[] = [
 					attempts: 2,
 					rating: {
 						stage_1: [1, 2, 3],
-						stage_2: [1, 2, 3],
-						stage_3: [1, 2, 3],
+						stage_2: [],
+						stage_3: [],
 					}
 				},
 				vehicle: {
@@ -171,7 +171,7 @@ export const competitionMock: Competition.BodyCompetition[] = [
 					rating: {
 						stage_1: [1, 2, 3],
 						stage_2: [1, 2, 3],
-						stage_3: [1, 2, 3],
+						stage_3: [],
 					}
 				},
 				vehicle: {

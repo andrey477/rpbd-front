@@ -10,7 +10,11 @@ export const fullVehicle = (vehicle: Vehicle.Data): string => {
 }
 
 export const fullRating = (rating: number[]): string => {
-	return ``
+	const first = rating[0];
+	const second = rating[1];
+	const third = rating[2];
+	const isEmpty = !first || !second || !third;
+	return isEmpty ? '-' : `${first} - ${second} - ${third}`;
 }
 
 export const totalRating = (stage_1: number[], stage_2: number[], stage_3: number[]) => {
