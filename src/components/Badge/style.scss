@@ -1,0 +1,25 @@
+.badge {
+	&__APPROVED,
+	&__REJECTED,
+	&__SENT {
+		padding: 4px;
+		border-radius: 5px;
+		max-width: 140px;
+		text-align: center;
+		text-transform: uppercase;
+		white-space: nowrap;
+		color: #fff;
+	}
+
+	&__APPROVED {
+		background-color: #4bb24b;
+	}
+
+	&__REJECTED {
+		background-color: #e32626;
+	}
+
+	&__SENT {
+		background-color: #1f94c5;
+	}
+}

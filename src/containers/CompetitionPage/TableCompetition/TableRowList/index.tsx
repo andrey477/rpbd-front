@@ -2,9 +2,9 @@ import React from 'react';
 import {Racer} from "../../../../types/racer";
 import {TableCell, TableRow as MaterialTableRow} from "@material-ui/core";
 import {fullName, fullVehicle} from "../../helper";
-import {StatusBadge} from "../../StatusBadge";
 import {Actions} from "../../Actions";
 import {VariantTable} from "../../../../constants/variantTable";
+import {Badge} from "../../../../components/Badge";
 
 interface Props {
   racer: Racer.Data;
@@ -29,7 +29,7 @@ export const TableRowList: React.FC<Props> = ({
         {fullVehicle(vehicle)}
       </TableCell>
       <TableCell>
-	      <StatusBadge status={status}/>
+	      <Badge status={status}/>
       </TableCell>
       <TableCell>
         <Actions
