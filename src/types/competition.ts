@@ -51,4 +51,8 @@ export declare namespace Competition {
 		competitionId: string;
 		status: Status;
 	}
+
+	interface NextStage {
+		competitionId: string;
+	}
 }
