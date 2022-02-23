@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Record} from "./Record";
-import {Divider, Tab, Tabs} from "@material-ui/core";
+import {Tab, Tabs} from "@material-ui/core";
 import {TabPanel} from "../../../components/TabPanel";
 import block from "bem-cn";
 import {Stage} from "./Stage";
@@ -49,7 +49,7 @@ export const Presenter: React.FC<Props> = ({competition, role, setCompetition}) 
 				textColor="primary"
 				centered
 			>
-				<Tab label='Запись на участие' disabled={role === Roles.ADMIN}/>
+				<Tab label='Запись на участие' disabled={role === Roles.ADMIN || stage !== StageVariant.RECORD}/>
 				<Tab label='Список заявок'/>
 				{/*<Tab label="Квалификация"/>*/}
 				<Tab label="1 ЭТАП" disabled={isDisable(2, stage)}/>

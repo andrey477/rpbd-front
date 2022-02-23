@@ -11,6 +11,7 @@ import {Competition} from "../../../types/competition";
 import {getRating} from "../../../utils";
 import {fetchRace, fetchStatus} from "../../../api/competitions";
 import {competitionMock1} from "../../../mock/testMock";
+import {Stage} from "../../../constants/stage";
 
 const bem = block('action');
 
@@ -21,6 +22,7 @@ export const Presenter: React.FC<Props> = ({
 	racerId,
 	variantTable = VariantTable.STAGE,
 	setCompetition,
+	stage
 }) => {
 	const isList = variantTable === VariantTable.LIST;
 	const classes = useStyle();
@@ -42,10 +44,8 @@ export const Presenter: React.FC<Props> = ({
 			status: event.currentTarget.value as Status
 		};
 		console.log(body);
-		console.log(setCompetition)
 		const response = await fetchStatus(body);
 		if (setCompetition) {
-			console.log('set')
 			setCompetition(competitionMock1);
 		}
 		// if (response && setCompetition) {
@@ -64,7 +64,7 @@ export const Presenter: React.FC<Props> = ({
 					<span className={bem('attempts')}>Количество попыток: {attempts}</span>
 				</div>
 			}
-			{role === Roles.ADMIN && isList &&
+			{role === Roles.ADMIN && isList && stage === Stage.RECORD &&
 				<div className={bem('buttons')}>
 					<Button
 						classes={classes}

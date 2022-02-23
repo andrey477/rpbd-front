@@ -26,6 +26,7 @@ interface Props {
 				 competitionId={competition.id}
 				 variantTable={variantTable}
 				 setCompetition={setCompetition}
+				 stage={competition.stage}
 			 />
 		 </Table>
    );

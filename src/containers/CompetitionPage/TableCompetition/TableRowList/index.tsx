@@ -6,12 +6,14 @@ import {Actions} from "../../Actions";
 import {VariantTable} from "../../../../constants/variantTable";
 import {Badge} from "../../../../components/Badge";
 import {Competition as CompetitionType} from "../../../../types/competition";
+import {Stage} from "../../../../constants/stage";
 
 interface Props {
   racer: Racer.Data;
   competitionId: string;
   variantTable?: VariantTable;
   setCompetition?: Dispatch<SetStateAction<CompetitionType.BodyCompetition[]>>
+  stage: Stage;
 }
 
 export const TableRowList: React.FC<Props> = ({
@@ -19,6 +21,7 @@ export const TableRowList: React.FC<Props> = ({
   variantTable = VariantTable.STAGE,
   competitionId,
   setCompetition,
+  stage,
 }) => {
   const {person, vehicle, race, status} = racer;
   const {attempts} = race;
@@ -41,6 +44,7 @@ export const TableRowList: React.FC<Props> = ({
           racerId={id}
           variantTable={variantTable}
           setCompetition={setCompetition}
+          stage={stage}
         />
       </TableCell>
     </MaterialTableRow>
