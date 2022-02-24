@@ -26,7 +26,7 @@ export const LoginPage: React.FC<Props> = () => {
     onSubmit: async (values) => {
       const response = await store.dispatch(loginUser(values));
       if (response.payload) {
-        history.push('/main');
+        history.push('/competition');
       }
     }
   });

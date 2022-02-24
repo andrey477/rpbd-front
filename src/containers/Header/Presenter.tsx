@@ -54,9 +54,6 @@ export const Presenter: React.FC<Props> = ({isAuth, role}) => {
 							<Link className={bem('menu-link')} to="/competition">Соревнования</Link>
 						</li>
 						<li className={bem('menu-item')}>
-							<Link className={bem('menu-link')} to="/racers">Участники</Link>
-						</li>
-						<li className={bem('menu-item')}>
 							<Button
 								onClick={handleClick}
 								color={'secondary'}

@@ -11,6 +11,7 @@ import {Logo} from "../ Logo";
 import './style.scss';
 import {Button} from "../Button";
 import {Link} from "react-router-dom";
+import {createBody} from "./helper";
 
 interface Props {
 
@@ -19,7 +20,7 @@ interface Props {
 const bem = block('registration');
 
 export const RegistrationPage: React.FC<Props> = () => {
-	const { handleSubmit, values, handleChange } = useFormik<Auth.Registration.Request>({
+	const { handleSubmit, values, handleChange } = useFormik<Auth.Registration.Form>({
 		initialValues: {
 			username: '',
 			password: '',
@@ -30,9 +31,10 @@ export const RegistrationPage: React.FC<Props> = () => {
 			surname: ''
 		},
 		onSubmit: async (values) => {
-			const response = await store.dispatch(registration(values));
+			console.log(createBody(values));
+			const response = await store.dispatch(registration(createBody(values)));
 			if (response.payload) {
-				history.push('/main');
+				history.push('/competition');
 			}
 		}
 	});

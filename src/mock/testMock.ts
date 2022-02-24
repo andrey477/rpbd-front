@@ -8,9 +8,6 @@ export const competitionMock1: Competition.BodyCompetition[] = [
 		name: 'Тестовое соревнование',
 		attempts: 2,
 		isOpen: true,
-		race_1: [],
-		race_2: [],
-		race_3: [],
 		racers: [
 			{
 				number: '17',
@@ -99,9 +96,6 @@ export const competitionMock1: Competition.BodyCompetition[] = [
 		name: 'Тестовое соревнование',
 		attempts: 2,
 		isOpen: true,
-		race_1: [],
-		race_2: [],
-		race_3: [],
 		racers: [
 			{
 				number: '17',

@@ -33,6 +33,18 @@ export declare namespace Auth {
 		interface Request {
 			username: string;
 			password: string;
+			person: {
+				name: string;
+				surname: string;
+				city: string;
+				email: string;
+				age: string;
+			}
+		}
+
+		interface Form {
+			username: string;
+			password: string;
 			name: string;
 			surname: string;
 			city: string;

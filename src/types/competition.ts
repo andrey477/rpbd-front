@@ -16,9 +16,6 @@ export declare namespace Competition {
 		racers: Racer.Data[];
 		stage: Stage;
 		isOpen: boolean;
-		race_1: Race.Data[]; // информация о заездах участников 1 этапа
-		race_2: Race.Data[]; // информация о заездах участников 1 этапа
-		race_3: Race.Data[]; // информация о заездах участников 1 этапа
 		total: Total.Data[]; // итоги участников
 		attempts: number; // сколько позволено попыток в данном соревновании
 	}

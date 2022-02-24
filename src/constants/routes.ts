@@ -20,12 +20,6 @@ export const routes: Route[] = [
     secured: false,
   },
   {
-    path: '/racers',
-    exact: true,
-    component: RacersPage,
-    secured: true,
-  },
-  {
     path: '/competition',
     exact: true,
     component: CompetitionPage,

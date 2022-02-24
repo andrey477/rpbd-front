@@ -37,6 +37,7 @@ export const Presenter: React.FC<Props> = ({competition, role, setCompetition}) 
 
 	const handleNextStage = async () => {
 		const {id} = competition;
+		console.log('handleNextStage:', {competitionId: id});
 		const response = await nextStage({competitionId: id});
 	}
 
@@ -100,7 +101,7 @@ export const Presenter: React.FC<Props> = ({competition, role, setCompetition}) 
 					/>
 				</TabPanel>
 			</div>
-			{role === Roles.ADMIN &&
+			{role === Roles.ADMIN && stage !== StageVariant.total &&
 				<div className={bem('admin-panel')}>
 					<Button onClick={handleNextStage}>{buttonText}</Button>
 				</div>

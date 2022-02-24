@@ -8,14 +8,11 @@ export const competitionMock: Competition.BodyCompetition[] = [
 		name: 'Тестовое соревнование',
 		attempts: 2,
 		isOpen: true,
-		race_1: [],
-		race_2: [],
-		race_3: [],
 		racers: [
 			{
 				number: '17',
 				person: {
-					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c",
+					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c11",
 					name: "Иван",
 					surname: "Иванов",
 					city: "Рязань",
@@ -41,7 +38,7 @@ export const competitionMock: Competition.BodyCompetition[] = [
 			{
 				number: '22',
 				person: {
-					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c",
+					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c22",
 					name: "Иван",
 					surname: "Иванов",
 					city: "Рязань",
@@ -67,7 +64,7 @@ export const competitionMock: Competition.BodyCompetition[] = [
 			{
 				number: '23',
 				person: {
-					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c",
+					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c33",
 					name: "Иван",
 					surname: "Иванов",
 					city: "Рязань",
@@ -99,14 +96,11 @@ export const competitionMock: Competition.BodyCompetition[] = [
 		name: 'Тестовое соревнование',
 		attempts: 2,
 		isOpen: true,
-		race_1: [],
-		race_2: [],
-		race_3: [],
 		racers: [
 			{
 				number: '17',
 				person: {
-					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c",
+					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c44",
 					name: "Иван",
 					surname: "Иванов",
 					city: "Рязань",
@@ -132,7 +126,7 @@ export const competitionMock: Competition.BodyCompetition[] = [
 			{
 				number: '22',
 				person: {
-					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c",
+					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c55",
 					name: "Иван",
 					surname: "Иванов",
 					city: "Рязань",
@@ -158,7 +152,7 @@ export const competitionMock: Competition.BodyCompetition[] = [
 			{
 				number: '23',
 				person: {
-					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c",
+					id: "419439f1-8a70-45f8-adf7-e9194c8ab52c66",
 					name: "Иван",
 					surname: "Иванов",
 					city: "Рязань",

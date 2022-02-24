@@ -53,9 +53,6 @@ export const Presenter: React.FC<Props> = ({
 		// 	setCompetition(competitionMock1);
 		// }
 	}
-	console.log('---')
-	console.log(currentStage)
-	console.log(stage)
 	return (
 		<div className={bem()}>
 			{role === Roles.ADMIN && !isRecord && currentStage === stage &&
