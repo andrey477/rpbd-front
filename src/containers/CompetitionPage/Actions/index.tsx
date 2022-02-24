@@ -14,6 +14,7 @@ interface OwnProps {
 	variantTable: VariantTable;
 	setCompetition?: Dispatch<SetStateAction<CompetitionType.BodyCompetition[]>>
 	stage: Stage;
+	currentStage?: Stage;
 }
 
 interface StateProps {

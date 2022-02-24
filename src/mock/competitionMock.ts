@@ -91,7 +91,7 @@ export const competitionMock: Competition.BodyCompetition[] = [
 				}
 			},
 		],
-		stage: Stage.RECORD,
+		stage: Stage.total,
 		total: [],
 	},
 	{

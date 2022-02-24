@@ -4,20 +4,22 @@ import {fullName, fullRating, fullVehicle} from "../../helper";
 import {Racer} from "../../../../types/racer";
 import {Actions} from "../../Actions";
 import {VariantTable} from "../../../../constants/variantTable";
-import {Stage} from "../../../../constants/stage";
+import {Stage as StageVariant, Stage} from "../../../../constants/stage";
 
 interface Props {
 	racer: Racer.Data;
 	competitionId: string;
 	variantTable?: VariantTable;
 	stage: Stage;
+	currentStage?: StageVariant;
 }
 
 export const TableRow: React.FC<Props> = ({
 	racer,
 	competitionId,
 	variantTable = VariantTable.STAGE,
-	stage
+	stage,
+	currentStage,
 }) => {
 	const {person, vehicle, race} = racer;
 	const {attempts} = race;
@@ -47,6 +49,7 @@ export const TableRow: React.FC<Props> = ({
 					racerId={id}
 					variantTable={variantTable}
 					stage={stage}
+					currentStage={currentStage}
 				/>
 			</TableCell>
 		</MaterialTableRow>

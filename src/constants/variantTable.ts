@@ -1,5 +1,5 @@
 export enum VariantTable {
 	STAGE = 'STAGE',
-	LIST = 'LIST',
+	RECORD = 'RECORD',
 	TOTAL = 'TOTAL'
 }

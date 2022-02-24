@@ -22,9 +22,10 @@ export const Presenter: React.FC<Props> = ({
 	racerId,
 	variantTable = VariantTable.STAGE,
 	setCompetition,
-	stage
+	stage,
+	currentStage
 }) => {
-	const isList = variantTable === VariantTable.LIST;
+	const isRecord = variantTable === VariantTable.RECORD;
 	const classes = useStyle();
 
 	const handleRace = async () => {
@@ -52,10 +53,12 @@ export const Presenter: React.FC<Props> = ({
 		// 	setCompetition(competitionMock1);
 		// }
 	}
-
+	console.log('---')
+	console.log(currentStage)
+	console.log(stage)
 	return (
 		<div className={bem()}>
-			{role === Roles.ADMIN && !isList &&
+			{role === Roles.ADMIN && !isRecord && currentStage === stage &&
 				<div className={bem('actions')}>
 					<Button
 						disabled={!attempts}
@@ -64,7 +67,7 @@ export const Presenter: React.FC<Props> = ({
 					<span className={bem('attempts')}>Количество попыток: {attempts}</span>
 				</div>
 			}
-			{role === Roles.ADMIN && isList && stage === Stage.RECORD &&
+			{role === Roles.ADMIN && isRecord && stage === Stage.RECORD &&
 				<div className={bem('buttons')}>
 					<Button
 						classes={classes}
