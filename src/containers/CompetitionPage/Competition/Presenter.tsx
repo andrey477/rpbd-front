@@ -15,10 +15,11 @@ import {Stage as StageVariant} from "../../../constants/stage";
 import {nextStage} from "../../../api/competitions";
 import './style.scss';
 import {isDisable, mapStageToNumber} from "./helper";
+import {checkInCompetition} from "../../../utils";
 
 const bem = block('competition');
 
-export const Presenter: React.FC<Props> = ({competition, role, setCompetition}) => {
+export const Presenter: React.FC<Props> = ({competition, role, setCompetition, userId}) => {
 	const {
 		stage,
 		attempts,
@@ -30,6 +31,7 @@ export const Presenter: React.FC<Props> = ({competition, role, setCompetition}) 
 	const [value, setValue] = useState<number>(initValue);
 
 	const buttonText = stage === StageVariant.stage_3 ? 'Завершить соревнование' : 'Следующий этап';
+	const inCompetition = checkInCompetition(userId, competition.racers);
 
 	const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
 		setValue(newValue);
@@ -50,7 +52,9 @@ export const Presenter: React.FC<Props> = ({competition, role, setCompetition}) 
 				textColor="primary"
 				centered
 			>
-				<Tab label='Запись на участие' disabled={role === Roles.ADMIN || stage !== StageVariant.RECORD}/>
+				<Tab
+					label='Запись на участие'
+					disabled={role === Roles.ADMIN || stage !== StageVariant.RECORD || inCompetition}/>
 				<Tab label='Список заявок'/>
 				{/*<Tab label="Квалификация"/>*/}
 				<Tab label="1 ЭТАП" disabled={isDisable(2, stage)}/>

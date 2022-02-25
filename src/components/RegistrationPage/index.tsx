@@ -3,8 +3,6 @@ import block from "bem-cn";
 import {Input} from "../Input";
 import {Form} from "../Form";
 import {useFormik} from "formik";
-import {store} from "../../store/store";
-import {registration} from "../../store/user/actions";
 import {history} from "../../history";
 import {Auth} from "../../types/auth";
 import {Logo} from "../ Logo";
@@ -12,6 +10,7 @@ import './style.scss';
 import {Button} from "../Button";
 import {Link} from "react-router-dom";
 import {createBody} from "./helper";
+import {registration} from "../../api/auth";
 
 interface Props {
 
@@ -32,9 +31,9 @@ export const RegistrationPage: React.FC<Props> = () => {
 		},
 		onSubmit: async (values) => {
 			console.log(createBody(values));
-			const response = await store.dispatch(registration(createBody(values)));
-			if (response.payload) {
-				history.push('/competition');
+			const response = await registration(createBody(values));
+			if (response) {
+				history.push('/login');
 			}
 		}
 	});

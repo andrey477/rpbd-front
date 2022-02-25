@@ -1,6 +1,5 @@
 import {Racer} from "./racer";
 import {Stage} from "../constants/stage";
-import {Race} from "./race";
 import {Total} from "./total";
 import {Status} from "../constants/status";
 

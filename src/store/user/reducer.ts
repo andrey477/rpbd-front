@@ -36,7 +36,6 @@ export const userReducer = createSlice({
     builder.addCase(loginUser.fulfilled, (state, action) => {
       if (action.payload) {
         state.data = action.payload;
-        state.data.user.role = Roles.ADMIN;
       }
     });
     builder.addCase(logoutUser.fulfilled, (state, action) => {

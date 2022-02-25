@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Dispatch, SetStateAction} from 'react';
 import {Modal} from "../../../components/Modal";
 import {DialogActions, DialogContent, DialogContentText, TextField} from "@material-ui/core";
 import {Button} from "../../../components/Button";
 import {createCompetition} from "../../../api/competitions";
 import {useFormik} from "formik";
-import {Competition} from "../../../types/competition";
+import {Competition as CompetitionType, Competition} from "../../../types/competition";
 import {Form} from "../../../components/Form";
 import './style.scss';
 import {Input} from "../../../components/Input";
@@ -13,12 +13,14 @@ interface Props {
   title: string;
 	open: boolean;
 	handleClose: () => void;
+	setCompetition: Dispatch<SetStateAction<CompetitionType.BodyCompetition[]>>
 }
 
 export const ModalCompetition: React.FC<Props> = ({
 	title,
 	open,
-	handleClose
+	handleClose,
+	setCompetition,
 }) => {
 	const { handleSubmit, values, handleChange } = useFormik<Competition.Request>({
 		initialValues: {
@@ -27,7 +29,10 @@ export const ModalCompetition: React.FC<Props> = ({
 		},
 		onSubmit: async (values) => {
 			console.log(values)
-			await createCompetition(values);
+			const response = await createCompetition(values);
+			if (response.length) {
+				setCompetition(response);
+			}
 		}
 	});
 

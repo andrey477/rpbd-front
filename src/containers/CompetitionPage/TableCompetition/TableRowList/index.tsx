@@ -24,7 +24,7 @@ export const TableRowList: React.FC<Props> = ({
   stage,
 }) => {
   const {person, vehicle, race, status} = racer;
-  const {attempts} = race;
+  const attempts = !!race ? race.attempts : 2;
   const {id} = person;
   return (
     <MaterialTableRow>

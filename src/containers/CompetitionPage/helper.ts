@@ -1,5 +1,6 @@
 import {Person} from "../../types/person";
 import {Vehicle} from "../../types/vehicle";
+import {Race} from "../../types/race";
 
 export const fullName = (person: Person.Data): string => {
 	return `${person.name} ${person.surname}`
@@ -9,17 +10,15 @@ export const fullVehicle = (vehicle: Vehicle.Data): string => {
 	return `${vehicle.brand} ${vehicle.model}\n${vehicle.horsepower} л/с`
 }
 
-export const fullRating = (rating: number[]): string => {
-	const first = rating[0];
-	const second = rating[1];
-	const third = rating[2];
+export const fullRating = (rating: Race.Stage): string => {
+	const {first, second, third} = rating;
 	const isEmpty = !first || !second || !third;
 	return isEmpty ? '-' : `${first} - ${second} - ${third}`;
 }
 
-export const totalRating = (stage_1: number[], stage_2: number[], stage_3: number[]) => {
-	const sum1 = stage_1.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
-	const sum2 = stage_2.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
-	const sum3 = stage_3.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+export const totalRating = (stage_1: Race.Stage, stage_2: Race.Stage, stage_3: Race.Stage) => {
+	const sum1 = Number(stage_1.first) + Number(stage_1.second) + Number(stage_1.third);
+	const sum2 = Number(stage_2.first) + Number(stage_2.second) + Number(stage_2.third);
+	const sum3 = Number(stage_3.first) + Number(stage_3.second) + Number(stage_3.third);
 	return sum1 + sum2 + sum3;
 }

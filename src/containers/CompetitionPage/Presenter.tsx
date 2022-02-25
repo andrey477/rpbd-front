@@ -58,6 +58,7 @@ export const Presenter: React.FC<Props> = ({ role  }) => {
 						title={'Создать соревнование'}
 						open={open}
 						handleClose={handleClose}
+						setCompetition={setData}
 					/>
 				}
 			</div>

@@ -23,9 +23,21 @@ export const competitionMock1: Competition.BodyCompetition[] = [
 				race: {
 					attempts: 2,
 					rating: {
-						stage_1: [1, 2, 3],
-						stage_2: [1, 2, 3],
-						stage_3: [1, 2, 3],
+						stage_1: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_2: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_3: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
 					}
 				},
 				vehicle: {
@@ -49,9 +61,21 @@ export const competitionMock1: Competition.BodyCompetition[] = [
 				race: {
 					attempts: 2,
 					rating: {
-						stage_1: [1, 2, 3],
-						stage_2: [1, 2, 3],
-						stage_3: [1, 2, 3],
+						stage_1: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_2: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_3: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
 					}
 				},
 				vehicle: {
@@ -75,9 +99,21 @@ export const competitionMock1: Competition.BodyCompetition[] = [
 				race: {
 					attempts: 2,
 					rating: {
-						stage_1: [1, 2, 3],
-						stage_2: [1, 2, 3],
-						stage_3: [1, 2, 3],
+						stage_1: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_2: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_3: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
 					}
 				},
 				vehicle: {
@@ -111,9 +147,21 @@ export const competitionMock1: Competition.BodyCompetition[] = [
 				race: {
 					attempts: 2,
 					rating: {
-						stage_1: [1, 2, 3],
-						stage_2: [1, 2, 3],
-						stage_3: [1, 2, 3],
+						stage_1: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_2: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_3: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
 					}
 				},
 				vehicle: {
@@ -137,9 +185,21 @@ export const competitionMock1: Competition.BodyCompetition[] = [
 				race: {
 					attempts: 2,
 					rating: {
-						stage_1: [1, 2, 3],
-						stage_2: [1, 2, 3],
-						stage_3: [1, 2, 3],
+						stage_1: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_2: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_3: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
 					}
 				},
 				vehicle: {
@@ -163,9 +223,21 @@ export const competitionMock1: Competition.BodyCompetition[] = [
 				race: {
 					attempts: 2,
 					rating: {
-						stage_1: [1, 2, 3],
-						stage_2: [1, 2, 3],
-						stage_3: [1, 2, 3],
+						stage_1: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_2: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
+						stage_3: {
+							first: 1,
+							second: 2,
+							third: 3
+						},
 					}
 				},
 				vehicle: {

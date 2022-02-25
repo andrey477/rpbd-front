@@ -22,7 +22,7 @@ export type Props = OwnProps & StateProps & DispatchProps;
 
 const mapStateToProps: MapStateToProps<StateProps, OwnProps, RootState> = ({userReducer}) => ({
   isAuth: Boolean(userReducer.data.access_token),
-  userRole: userReducer.data.user.role,
+  userRole: (userReducer.data && userReducer.data.user && userReducer.data.user.role) ? userReducer.data.user.role : Roles.RACER
 });
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = ({});
 

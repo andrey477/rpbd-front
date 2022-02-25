@@ -5,6 +5,7 @@ import {Competition as CompetitionType, Competition} from "../../../types/compet
 import {VariantTable} from "../../../constants/variantTable";
 import {TableBody} from "./TableBody";
 import {Stage as StageVariant} from "../../../constants/stage";
+import block from "bem-cn";
 
 interface Props {
 	 competition: Competition.BodyCompetition;
@@ -14,24 +15,30 @@ interface Props {
 	 currentStage?: StageVariant;
 }
 
- export const TableCompetition: React.FC<Props> = ({
+const bem = block('table-competition');
+
+export const TableCompetition: React.FC<Props> = ({
 	variantTable= VariantTable.STAGE,
 	competition,
 	columns,
 	setCompetition,
 	currentStage
 }) => {
+	console.log('!!!')
+	console.log(competition.racers.length);
    return (
 		 <Table>
 			 <TableHead columns={columns}/>
-			 <TableBody
-				 racers={competition.racers}
-				 competitionId={competition.id}
-				 variantTable={variantTable}
-				 setCompetition={setCompetition}
-				 stage={competition.stage}
-				 currentStage={currentStage}
-			 />
+			 {!competition.racers.length ? <div className={bem('empty')}/> :
+				 <TableBody
+					 racers={competition.racers}
+					 competitionId={competition.id}
+					 variantTable={variantTable}
+					 setCompetition={setCompetition}
+					 stage={competition.stage}
+					 currentStage={currentStage}
+				 />
+			 }
 		 </Table>
    );
  }

@@ -17,7 +17,8 @@ export const login = async (body: Auth.Login.Request): Promise<Auth.Login.Respon
 export const registration = async (body: Auth.Registration.Request): Promise<Auth.Login.Response | null> => {
 	try {
 		const apiService = ApiService();
-		const { data } = await apiService.post<Auth.Login.Response>('/registration', body);
+		const { data } = await apiService.post<Auth.Login.Response>('/api/registration', body);
+		return data;
 	}
 	catch (err) {
 		console.error(err);

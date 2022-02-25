@@ -4,14 +4,13 @@ import {Competition} from "../../types/competition";
 import {competitionMock} from "../../mock/competitionMock";
 
 export const useCompetitionPage = () => {
-	const [data, setData] = useState<Competition.BodyCompetition[]>([]);
+	const [data, setData] = useState<Competition.BodyCompetition[]>(competitionMock);
 	const [loading, setLoading] = useState<boolean>(false);
 
 	useEffect(() => {
-		setData(competitionMock);
 		// setLoading(true);
 		// competitions()
-		// 	.then(response => setData(response ? response.content : []))
+		// 	.then(setData)
 		// 	.finally(() => setLoading(false));
 	}, []);
 

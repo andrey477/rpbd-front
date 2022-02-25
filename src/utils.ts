@@ -13,5 +13,5 @@ export const getRating = (): number[] => {
 }
 
 export const checkInCompetition = (id: string, racers: Racer.Data[]): boolean => {
-	return Boolean(racers.find(racer => racer.person.id === id));
+	return racers.length ? Boolean(racers.find(racer => racer.person.id === id)) : false;
 }

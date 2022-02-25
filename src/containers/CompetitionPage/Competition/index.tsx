@@ -12,6 +12,7 @@ interface OwnProps {
 
 interface StateProps {
 	role: Roles;
+	userId: string;
 }
 
 interface DispatchProps {
@@ -20,7 +21,8 @@ interface DispatchProps {
 export type Props = OwnProps & StateProps & DispatchProps;
 
 const mapStateToProps: MapStateToProps<StateProps, OwnProps, RootState> = ({userReducer}) => ({
-	role: userReducer.data.user.role
+	role: userReducer.data.user.role,
+	userId: userReducer.data.user.person.id,
 });
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = ({  });
