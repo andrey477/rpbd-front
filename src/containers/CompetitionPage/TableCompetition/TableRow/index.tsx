@@ -25,7 +25,18 @@ export const TableRow: React.FC<Props> = ({
 	setCompetition,
 }) => {
 	const {person, vehicle, race} = racer;
-	const {attempts} = race;
+	let attempts: number | undefined = 2;
+	switch (stage) {
+		case Stage.stage_1:
+			attempts = race.ratingOneStage.attempts;
+			break;
+		case Stage.stage_2:
+			attempts = race.ratingTwoStage.attempts;
+			break;
+		case Stage.stage_3:
+			attempts = race.ratingThirdStage.attempts;
+			break;
+	}
 	const {id} = person;
 	const {ratingOneStage, ratingTwoStage, ratingThirdStage} = race;
   return (

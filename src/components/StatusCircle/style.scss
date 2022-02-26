@@ -1,0 +1,14 @@
+.status-circle {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	margin-left: 20px;
+
+	&_type_active {
+		background-color: #4bb24b;
+	}
+
+	&_type_closed {
+		background-color: #e32626;
+	}
+}

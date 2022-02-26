@@ -6,12 +6,13 @@ import './style.scss';
 
 interface Props {
   status: Status;
+	title?: string;
 }
 
 const bem = block('badge');
 
-export const Badge: React.FC<Props> = ({ status }) => {
-	const text = getBadgeText(status);
+export const Badge: React.FC<Props> = ({ status, title }) => {
+	const text = title ? title : getBadgeText(status);
   return (
     <div className={bem(status)}>
 			{text}

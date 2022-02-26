@@ -4,14 +4,13 @@ import {Props} from "./index";
 import {Roles} from "../../../constants/roles";
 import {Button} from "../../../components/Button";
 import {VariantTable} from "../../../constants/variantTable";
-import './style.scss';
 import {useStyle} from "./useStyle";
 import {Status} from "../../../constants/status";
 import {Competition} from "../../../types/competition";
 import {getRating} from "../../../utils";
 import {fetchRace, fetchStatus} from "../../../api/competitions";
-import {competitionMock1} from "../../../mock/testMock";
 import {Stage} from "../../../constants/stage";
+import './style.scss';
 
 const bem = block('action');
 
@@ -66,7 +65,7 @@ export const Presenter: React.FC<Props> = ({
 						disabled={!attempts}
 						onClick={handleRace}
 					>Заезд</Button>
-					<span className={bem('attempts')}>Количество попыток: {attempts}</span>
+					<span className={bem('attempts')}>Количество попыток: {attempts ?? 0}</span>
 				</div>
 			}
 			{role === Roles.ADMIN && isRecord && stage === Stage.RECORD &&

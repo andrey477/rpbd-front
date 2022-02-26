@@ -9,7 +9,7 @@ import {Stage} from "../../../constants/stage";
 import {Status} from "../../../constants/status";
 
 interface OwnProps {
-	attempts: number;
+	attempts?: number;
 	competitionId: string;
 	personId: string;
 	variantTable: VariantTable;

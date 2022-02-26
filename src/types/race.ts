@@ -7,6 +7,7 @@ export declare namespace Race {
 	}
 
 	interface Stage {
+		attempts?: number;
 		first: number | null;
 		second: number | null;
 		third: number | null;

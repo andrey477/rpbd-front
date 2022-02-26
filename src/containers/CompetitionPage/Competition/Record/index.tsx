@@ -10,6 +10,7 @@ interface OwnProps {
 	competitionId: string;
 	attempts: number;
 	setCompetition: Dispatch<SetStateAction<CompetitionType.BodyCompetition[]>>
+	setValue: Dispatch<SetStateAction<number>>;
 }
 
 interface StateProps {

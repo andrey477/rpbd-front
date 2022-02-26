@@ -73,6 +73,7 @@ export const Presenter: React.FC<Props> = ({competition, role, setCompetition, u
 						competitionId={id}
 						attempts={attempts}
 						setCompetition={setCompetition}
+						setValue={setValue}
 					/>
 				</TabPanel>
 				<TabPanel index={1} value={value}>

@@ -43,16 +43,17 @@ export const Presenter: React.FC<Props> = ({ role  }) => {
 				<Divider/>
 				{!data.length ? <div className={bem('empty')}>Список соревнований пуст</div> :
 					<Accordion>
-						{data.map(data => (
+						{data.map(item => (
 							<AccordionItem
-								title={data.name}
-								key={data.id}
+								title={item.name}
+								key={item.id}
 								setCompetition={setData}
-								id={data.id}
+								id={item.id}
 								expanded={expanded}
 								handleChange={handleChange}
+								stage={item.stage}
 							>
-								<Competition competition={data} setCompetition={setData}/>
+								<Competition competition={item} setCompetition={setData}/>
 							</AccordionItem>
 						))}
 					</Accordion>
