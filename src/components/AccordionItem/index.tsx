@@ -29,9 +29,9 @@ export const AccordionItem: React.FC<Props> = ({
   const classes = useStyle();
 
   const handleDelete = async (event: React.MouseEvent<HTMLButtonElement>) => {
-    const response = await deleteCompetition(id)
     event.stopPropagation();
-    if (response) {
+    const response = await deleteCompetition(id)
+    if (response.length) {
       setCompetition(response);
     }
   }

@@ -87,18 +87,21 @@ export const Presenter: React.FC<Props> = ({competition, role, setCompetition, u
 					<Stage
 						competition={competition}
 						currentStage={StageVariant.stage_1}
+						setCompetition={setCompetition}
 					/>
 				</TabPanel>
 				<TabPanel index={3} value={value}>
 					<Stage
 						competition={competition}
 						currentStage={StageVariant.stage_2}
+						setCompetition={setCompetition}
 					/>
 				</TabPanel>
 				<TabPanel index={4} value={value}>
 					<Stage
 						competition={competition}
 						currentStage={StageVariant.stage_3}
+						setCompetition={setCompetition}
 					/>
 				</TabPanel>
 				<TabPanel index={5} value={value}>

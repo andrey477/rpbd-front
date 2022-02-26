@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Dispatch, SetStateAction} from 'react';
 import block from "bem-cn";
-import {Competition} from "../../../../types/competition";
+import {Competition as CompetitionType, Competition} from "../../../../types/competition";
 import {columns} from "./columns";
 import {TableCompetition} from "../../TableCompetition";
 import {Stage as StageVariant} from "../../../../constants/stage";
@@ -8,13 +8,15 @@ import {Stage as StageVariant} from "../../../../constants/stage";
 interface Props {
 	competition: Competition.BodyCompetition;
 	currentStage: StageVariant;
+	setCompetition: Dispatch<SetStateAction<CompetitionType.BodyCompetition[]>>
 }
 
 const bem = block('stage');
 
 export const Stage: React.FC<Props> = ({
 	competition,
-	currentStage
+	currentStage,
+	setCompetition
 }) => {
   return (
     <div className={bem()}>
@@ -22,6 +24,7 @@ export const Stage: React.FC<Props> = ({
 				competition={competition}
 				columns={columns}
 				currentStage={currentStage}
+				setCompetition={setCompetition}
 			/>
 		</div>
   );

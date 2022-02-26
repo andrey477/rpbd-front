@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {Dispatch, SetStateAction} from 'react';
 import {TableCell, TableRow as MaterialTableRow} from "@material-ui/core";
 import {fullName, fullRating, fullVehicle} from "../../helper";
 import {Racer} from "../../../../types/racer";
 import {Actions} from "../../Actions";
 import {VariantTable} from "../../../../constants/variantTable";
 import {Stage as StageVariant, Stage} from "../../../../constants/stage";
+import {Competition as CompetitionType} from "../../../../types/competition";
 
 interface Props {
 	racer: Racer.Data;
@@ -12,6 +13,7 @@ interface Props {
 	variantTable?: VariantTable;
 	stage: Stage;
 	currentStage?: StageVariant;
+	setCompetition?: Dispatch<SetStateAction<CompetitionType.BodyCompetition[]>>
 }
 
 export const TableRow: React.FC<Props> = ({
@@ -20,6 +22,7 @@ export const TableRow: React.FC<Props> = ({
 	variantTable = VariantTable.STAGE,
 	stage,
 	currentStage,
+	setCompetition,
 }) => {
 	const {person, vehicle, race} = racer;
 	const {attempts} = race;
@@ -50,6 +53,7 @@ export const TableRow: React.FC<Props> = ({
 					variantTable={variantTable}
 					stage={stage}
 					currentStage={currentStage}
+					setCompetition={setCompetition}
 				/>
 			</TableCell>
 		</MaterialTableRow>

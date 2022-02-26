@@ -45,6 +45,7 @@ export const TableRowList: React.FC<Props> = ({
           variantTable={variantTable}
           setCompetition={setCompetition}
           stage={stage}
+          status={status}
         />
       </TableCell>
     </MaterialTableRow>

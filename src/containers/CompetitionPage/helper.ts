@@ -12,7 +12,7 @@ export const fullVehicle = (vehicle: Vehicle.Data): string => {
 
 export const fullRating = (rating: Race.Stage): string => {
 	const {first, second, third} = rating;
-	const isEmpty = !first || !second || !third;
+	const isEmpty = !first && !second && !third;
 	return isEmpty ? '-' : `${first} - ${second} - ${third}`;
 }
 

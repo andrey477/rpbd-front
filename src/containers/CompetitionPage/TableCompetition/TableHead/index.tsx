@@ -12,8 +12,7 @@ export const TableHead: React.FC<Props> = ({columns}) => {
     <MaterialTableHead>
       <TableRow>
         {columns.map(({name}) => (
-          <TableCell
-          >{name}</TableCell>
+          <TableCell key={name}>{name}</TableCell>
         ))}
       </TableRow>
     </MaterialTableHead>

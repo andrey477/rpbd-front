@@ -29,14 +29,17 @@ export const TableBody: React.FC<Props> = ({
     <MaterialTableBody>
       {variantTable === VariantTable.STAGE && racers.map(racer => (
         <TableRow
+          key={racer.person.id}
           racer={racer}
           competitionId={competitionId}
           stage={stage}
           currentStage={currentStage}
+          setCompetition={setCompetition}
         />
       ))}
       {variantTable === VariantTable.RECORD && racers.map(racer => (
         <TableRowList
+          key={racer.person.id}
           racer={racer}
           competitionId={competitionId}
           variantTable={variantTable}
@@ -45,7 +48,7 @@ export const TableBody: React.FC<Props> = ({
         />
       ))}
       {variantTable === VariantTable.TOTAL && racers.map(racer => (
-        <TableRowTotal racer={racer}/>
+        <TableRowTotal racer={racer} key={racer.person.id}/>
       ))}
     </MaterialTableBody>
   );

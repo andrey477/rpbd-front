@@ -112,11 +112,7 @@ export const nextStage = async (body: Competition.NextStage): Promise<Competitio
 export const deleteCompetition = async (id: string): Promise<Competition.BodyCompetition[]> => {
 	try {
 		const apiService = ApiService();
-		const { data } = await apiService.delete<Competition.BodyCompetition[]>('/api/competitions', {
-			params: {
-				id
-			}
-		});
+		const { data } = await apiService.delete<Competition.BodyCompetition[]>(`/api/competitions/${id}`);
 		return data;
 	}
 	catch (err) {

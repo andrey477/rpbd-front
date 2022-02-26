@@ -23,7 +23,8 @@ export const Presenter: React.FC<Props> = ({
 	variantTable = VariantTable.STAGE,
 	setCompetition,
 	stage,
-	currentStage
+	currentStage,
+	status
 }) => {
 	const isRecord = variantTable === VariantTable.RECORD;
 	const classes = useStyle();
@@ -36,6 +37,11 @@ export const Presenter: React.FC<Props> = ({
 		};
 		console.log(body);
 		const response = await fetchRace(body);
+		console.log(response)
+		console.log(setCompetition)
+		if (response.length && setCompetition) {
+			setCompetition(response);
+		}
 	}
 
 	const handleStatus = async (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -69,11 +75,13 @@ export const Presenter: React.FC<Props> = ({
 						classes={classes}
 						value={Status.APPROVED}
 						onClick={handleStatus}
+						disabled={status !== Status.SENT}
 					>Принять</Button>
 					<Button
 						classes={classes}
 						value={Status.REJECTED}
 						onClick={handleStatus}
+						disabled={status !== Status.SENT}
 					>Отклонить</Button>
 				</div>
 			}

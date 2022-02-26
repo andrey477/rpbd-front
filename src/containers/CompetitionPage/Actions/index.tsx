@@ -6,6 +6,7 @@ import {Roles} from "../../../constants/roles";
 import {VariantTable} from "../../../constants/variantTable";
 import {Competition as CompetitionType} from "../../../types/competition";
 import {Stage} from "../../../constants/stage";
+import {Status} from "../../../constants/status";
 
 interface OwnProps {
 	attempts: number;
@@ -15,6 +16,7 @@ interface OwnProps {
 	setCompetition?: Dispatch<SetStateAction<CompetitionType.BodyCompetition[]>>
 	stage: Stage;
 	currentStage?: Stage;
+	status?: Status;
 }
 
 interface StateProps {
