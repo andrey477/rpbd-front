@@ -26,7 +26,7 @@ export const TableRow: React.FC<Props> = ({
 	const {id} = person;
 	const {ratingOneStage, ratingTwoStage, ratingThirdStage} = race;
   return (
-    <MaterialTableRow>
+    <MaterialTableRow hover>
 			<TableCell>
 				{fullName(person)}
 			</TableCell>

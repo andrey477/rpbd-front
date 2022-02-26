@@ -13,7 +13,7 @@ export const TableRowTotal: React.FC<Props> = ({
 	const {person, vehicle, race} = racer;
 	const {ratingOneStage, ratingTwoStage, ratingThirdStage} = race;
   return (
-		<MaterialTableRow>
+		<MaterialTableRow hover>
 			<TableCell>
 				{fullName(person)}
 			</TableCell>

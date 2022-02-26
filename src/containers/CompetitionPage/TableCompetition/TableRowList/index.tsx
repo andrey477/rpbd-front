@@ -27,7 +27,7 @@ export const TableRowList: React.FC<Props> = ({
   const attempts = !!race ? race.attempts : 2;
   const {id} = person;
   return (
-    <MaterialTableRow>
+    <MaterialTableRow hover>
       <TableCell>
         {fullName(person)}
       </TableCell>
