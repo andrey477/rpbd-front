@@ -27,7 +27,7 @@ export const TableBody: React.FC<Props> = ({
 }) => {
   return (
     <MaterialTableBody>
-      {variantTable === VariantTable.STAGE && racers.map(racer => (
+      {variantTable === VariantTable.STAGE && racers.length && racers.map(racer => (
         <TableRow
           key={racer.person.id}
           racer={racer}
@@ -37,7 +37,7 @@ export const TableBody: React.FC<Props> = ({
           setCompetition={setCompetition}
         />
       ))}
-      {variantTable === VariantTable.RECORD && racers.map(racer => (
+      {variantTable === VariantTable.RECORD && racers.length && racers.map(racer => (
         <TableRowList
           key={racer.person.id}
           racer={racer}
@@ -47,7 +47,7 @@ export const TableBody: React.FC<Props> = ({
           stage={stage}
         />
       ))}
-      {variantTable === VariantTable.TOTAL && racers.map(racer => (
+      {variantTable === VariantTable.TOTAL && racers.length && racers.map(racer => (
         <TableRowTotal racer={racer} key={racer.person.id}/>
       ))}
     </MaterialTableBody>

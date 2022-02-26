@@ -1,11 +1,12 @@
 import React, {Dispatch, SetStateAction} from 'react';
-import {Table} from "@material-ui/core";
+import {Table, TableBody as MaterialTableBody, TableCell, TableRow} from "@material-ui/core";
 import {TableHead} from "./TableHead";
 import {Competition as CompetitionType, Competition} from "../../../types/competition";
 import {VariantTable} from "../../../constants/variantTable";
 import {TableBody} from "./TableBody";
 import {Stage as StageVariant} from "../../../constants/stage";
 import block from "bem-cn";
+import './style.scss';
 
 interface Props {
 	 competition: Competition.BodyCompetition;
@@ -24,12 +25,17 @@ export const TableCompetition: React.FC<Props> = ({
 	setCompetition,
 	currentStage
 }) => {
-	console.log('!!!')
-	console.log(competition.racers.length);
+	const text = 'Список участников пуст'
    return (
 		 <Table>
 			 <TableHead columns={columns}/>
-			 {!competition.racers.length ? <div className={bem('empty')}/> :
+			 {!competition.racers.length ?
+				 <MaterialTableBody>
+					 <TableRow>
+						 <TableCell colSpan={4} align={"center"}>{text}</TableCell>
+					 </TableRow>
+				 </MaterialTableBody>
+				 :
 				 <TableBody
 					 racers={competition.racers}
 					 competitionId={competition.id}
