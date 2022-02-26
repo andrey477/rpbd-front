@@ -26,13 +26,14 @@ export const TableCompetition: React.FC<Props> = ({
 	currentStage
 }) => {
 	const text = 'Список участников пуст'
+	const colSpan = variantTable === VariantTable.RECORD ? 4 : 6
    return (
 		 <Table>
 			 <TableHead columns={columns}/>
 			 {!competition.racers.length ?
 				 <MaterialTableBody>
 					 <TableRow>
-						 <TableCell colSpan={4} align={"center"}>{text}</TableCell>
+						 <TableCell colSpan={colSpan} align={"center"}>{text}</TableCell>
 					 </TableRow>
 				 </MaterialTableBody>
 				 :
