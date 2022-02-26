@@ -32,6 +32,7 @@ export const ModalCompetition: React.FC<Props> = ({
 			const response = await createCompetition(values);
 			if (response.length) {
 				setCompetition(response);
+				handleClose();
 			}
 		}
 	});

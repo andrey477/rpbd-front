@@ -47,9 +47,9 @@ export const competitions = async (): Promise<Competition.BodyCompetition[]> => 
 
 export const addRacer = async (body: Competition.AddRacer): Promise<Competition.BodyCompetition[]> => {
 	try {
-		const {race, ...rest} = body.racer;
+		const {competitionId, racer} = body;
 		const apiService = ApiService();
-		const { data } = await apiService.post<Competition.BodyCompetition[]>('/api/competition/add-racer', body, {
+		const { data } = await apiService.post<Competition.BodyCompetition[]>('/api/competition/add-racer', {...racer}, {
 			params: {
 				competitionId: body.competitionId
 			}
@@ -72,39 +72,56 @@ export const addRacer = async (body: Competition.AddRacer): Promise<Competition.
 	return [];
 }
 
-export const fetchRace = async (body: Competition.FetchRace): Promise<Competition.Response | null> => {
+export const fetchRace = async (body: Competition.FetchRace): Promise<Competition.BodyCompetition[]> => {
 	try {
 		const apiService = ApiService();
-		const { data } = await apiService.post<Competition.Response>('/api/competitions/race', body);
+		const { data } = await apiService.post<Competition.BodyCompetition[]>('/api/competitions/race', body);
 		return data;
 	}
 	catch (err) {
 		console.error(err);
 	}
-	return null;
+	return [];
 }
 
-export const fetchStatus = async (body: Competition.FetchStatus): Promise<Competition.Response | null> => {
+export const fetchStatus = async (body: Competition.FetchStatus): Promise<Competition.BodyCompetition[]> => {
 	try {
 		const apiService = ApiService();
-		const { data } = await apiService.post<Competition.Response>('/api/competitions/status', body);
+		const { data } = await apiService.post<Competition.BodyCompetition[]>('/api/competitions/status', {...body});
 		return data;
 	}
 	catch (err) {
 		console.log(err);
 	}
-	return null;
+	return [];
 }
 
-export const nextStage = async (body: Competition.NextStage): Promise<Competition.Response | null> => {
+export const nextStage = async (body: Competition.NextStage): Promise<Competition.BodyCompetition[]> => {
 	try {
 		const apiService = ApiService();
-		const { data } = await apiService.post<Competition.Response>('/api/competitions/next', body);
+		const { data } = await apiService.post<Competition.BodyCompetition[]>('/api/competitions/next', body);
 		return data;
 	}
 	catch (err) {
 		console.error(err);
 	}
 
-	return null;
+	return [];
+}
+
+export const deleteCompetition = async (id: string): Promise<Competition.BodyCompetition[]> => {
+	try {
+		const apiService = ApiService();
+		const { data } = await apiService.delete<Competition.BodyCompetition[]>('/api/competitions', {
+			params: {
+				id
+			}
+		});
+		return data;
+	}
+	catch (err) {
+		console.error(err);
+	}
+
+	return [];
 }

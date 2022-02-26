@@ -41,6 +41,11 @@ export const Presenter: React.FC<Props> = ({competition, role, setCompetition, u
 		const {id} = competition;
 		console.log('handleNextStage:', {competitionId: id});
 		const response = await nextStage({competitionId: id});
+		if (response) {
+			setCompetition(response);
+			const tab = value + 1;
+			setValue(tab);
+		}
 	}
 
 	return (
@@ -56,7 +61,6 @@ export const Presenter: React.FC<Props> = ({competition, role, setCompetition, u
 					label='Запись на участие'
 					disabled={role === Roles.ADMIN || stage !== StageVariant.RECORD || inCompetition}/>
 				<Tab label='Список заявок'/>
-				{/*<Tab label="Квалификация"/>*/}
 				<Tab label="1 ЭТАП" disabled={isDisable(2, stage)}/>
 				<Tab label="2 ЭТАП" disabled={isDisable(3, stage)}/>
 				<Tab label="3 ЭТАП" disabled={isDisable(4, stage)}/>
@@ -68,6 +72,7 @@ export const Presenter: React.FC<Props> = ({competition, role, setCompetition, u
 						title={name}
 						competitionId={id}
 						attempts={attempts}
+						setCompetition={setCompetition}
 					/>
 				</TabPanel>
 				<TabPanel index={1} value={value}>

@@ -24,7 +24,7 @@ export const TableRow: React.FC<Props> = ({
 	const {person, vehicle, race} = racer;
 	const {attempts} = race;
 	const {id} = person;
-	const {stage_1, stage_2, stage_3} = race.rating;
+	const {ratingOneStage, ratingTwoStage, ratingThirdStage} = race;
   return (
     <MaterialTableRow>
 			<TableCell>
@@ -34,19 +34,19 @@ export const TableRow: React.FC<Props> = ({
 				{fullVehicle(vehicle)}
 			</TableCell>
 			<TableCell>
-				{fullRating(stage_1)}
+				{fullRating(ratingOneStage)}
 			</TableCell>
 			<TableCell>
-				{fullRating(stage_2)}
+				{fullRating(ratingTwoStage)}
 			</TableCell>
 			<TableCell>
-				{fullRating(stage_3)}
+				{fullRating(ratingThirdStage)}
 			</TableCell>
 			<TableCell>
 				<Actions
 					attempts={attempts}
 					competitionId={competitionId}
-					racerId={id}
+					personId={id}
 					variantTable={variantTable}
 					stage={stage}
 					currentStage={currentStage}

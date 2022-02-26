@@ -15,23 +15,21 @@ export const createBody = (values: Form, id: string, person: Person.Data, attemp
 		number: values.number,
 		race: {
 			attempts,
-			rating: {
-				stage_1: {
-					first: null,
-					second: null,
-					third: null,
-				},
-				stage_2: {
-					first: null,
-					second: null,
-					third: null,
-				},
-				stage_3: {
-					first: null,
-					second: null,
-					third: null,
-				}
+			ratingOneStage: {
+				first: null,
+				second: null,
+				third: null,
 			},
+			ratingTwoStage: {
+				first: null,
+				second: null,
+				third: null,
+			},
+			ratingThirdStage: {
+				first: null,
+				second: null,
+				third: null,
+			}
 		},
 		person,
 		status: Status.SENT,

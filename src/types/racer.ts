@@ -5,6 +5,7 @@ import {Status} from "../constants/status";
 
 export declare namespace Racer {
 	interface Data {
+		id?: string;
 		person: Person.Data;
 		vehicle: Vehicle.Data;
 		status: Status;

@@ -39,7 +39,12 @@ export const Presenter: React.FC<Props> = ({ role  }) => {
 				{!data.length ? <div className={bem('empty')}>Список соревнований пуст</div> :
 					<Accordion>
 						{data.map(data => (
-							<AccordionItem title={data.name} key={data.id}>
+							<AccordionItem
+								title={data.name}
+								key={data.id}
+								setCompetition={setData}
+								id={data.id}
+							>
 								<Competition competition={data} setCompetition={setData}/>
 							</AccordionItem>
 						))}

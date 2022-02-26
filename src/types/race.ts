@@ -1,11 +1,9 @@
 export declare namespace Race {
 	interface Data {
 		attempts: number; // попытки
-		rating: {
-			stage_1: Stage,
-			stage_2: Stage,
-			stage_3: Stage,
-		}; // оценки судей
+		ratingOneStage: Stage;
+		ratingTwoStage: Stage;
+		ratingThirdStage: Stage;
 	}
 
 	interface Stage {

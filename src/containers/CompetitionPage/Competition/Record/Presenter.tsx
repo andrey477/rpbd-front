@@ -18,7 +18,8 @@ export const Presenter: React.FC<Props> = ({
 	title,
 	competitionId,
 	attempts,
-	person
+	person,
+	setCompetition,
 }) => {
 	const { handleSubmit, values, handleChange } = useFormik({
 		initialValues: {
@@ -29,8 +30,9 @@ export const Presenter: React.FC<Props> = ({
 		},
 		onSubmit: async (values) => {
 			const body = createBody(values, competitionId, person, attempts);
-			console.log(body)
-			await addRacer(body);
+			const response = await addRacer(body);
+			console.log(response)
+			setCompetition(response);
 		}
 	});
 

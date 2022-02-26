@@ -19,7 +19,7 @@ export const Presenter: React.FC<Props> = ({
 	role	,
 	attempts,
 	competitionId,
-	racerId,
+	personId,
 	variantTable = VariantTable.STAGE,
 	setCompetition,
 	stage,
@@ -31,7 +31,7 @@ export const Presenter: React.FC<Props> = ({
 	const handleRace = async () => {
 		const body: Competition.FetchRace = {
 			competitionId,
-			racerId,
+			personId,
 			rating: getRating()
 		};
 		console.log(body);
@@ -41,17 +41,16 @@ export const Presenter: React.FC<Props> = ({
 	const handleStatus = async (event: React.MouseEvent<HTMLButtonElement>) => {
 		const body: Competition.FetchStatus = {
 			competitionId,
-			racerId,
+			personId,
 			status: event.currentTarget.value as Status
 		};
-		console.log(body);
 		const response = await fetchStatus(body);
-		if (setCompetition) {
-			setCompetition(competitionMock1);
+		console.log('---fetchStatusResponse')
+		console.log(response);
+		console.log(setCompetition)
+		if (response.length && setCompetition) {
+			setCompetition(response);
 		}
-		// if (response && setCompetition) {
-		// 	setCompetition(competitionMock1);
-		// }
 	}
 	return (
 		<div className={bem()}>

@@ -11,7 +11,7 @@ export const TableRowTotal: React.FC<Props> = ({
 	racer,
 }) => {
 	const {person, vehicle, race} = racer;
-	const {stage_1, stage_2, stage_3} = race.rating;
+	const {ratingOneStage, ratingTwoStage, ratingThirdStage} = race;
   return (
 		<MaterialTableRow>
 			<TableCell>
@@ -21,16 +21,16 @@ export const TableRowTotal: React.FC<Props> = ({
 				{fullVehicle(vehicle)}
 			</TableCell>
 			<TableCell>
-				{fullRating(stage_1)}
+				{fullRating(ratingOneStage)}
 			</TableCell>
 			<TableCell>
-				{fullRating(stage_2)}
+				{fullRating(ratingTwoStage)}
 			</TableCell>
 			<TableCell>
-				{fullRating(stage_3)}
+				{fullRating(ratingThirdStage)}
 			</TableCell>
 			<TableCell>
-				{totalRating(stage_1, stage_2, stage_3)}
+				{totalRating(ratingOneStage, ratingTwoStage, ratingThirdStage)}
 			</TableCell>
 		</MaterialTableRow>
   );

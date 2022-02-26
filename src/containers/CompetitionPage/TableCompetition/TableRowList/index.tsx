@@ -41,7 +41,7 @@ export const TableRowList: React.FC<Props> = ({
         <Actions
           attempts={attempts}
           competitionId={competitionId}
-          racerId={id}
+          personId={id}
           variantTable={variantTable}
           setCompetition={setCompetition}
           stage={stage}

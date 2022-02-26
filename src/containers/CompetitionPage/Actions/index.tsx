@@ -10,7 +10,7 @@ import {Stage} from "../../../constants/stage";
 interface OwnProps {
 	attempts: number;
 	competitionId: string;
-	racerId: string;
+	personId: string;
 	variantTable: VariantTable;
 	setCompetition?: Dispatch<SetStateAction<CompetitionType.BodyCompetition[]>>
 	stage: Stage;
