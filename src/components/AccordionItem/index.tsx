@@ -11,7 +11,9 @@ import {Competition as CompetitionType} from "../../types/competition";
 interface Props {
   title: string;
   id: string;
-  setCompetition: Dispatch<SetStateAction<CompetitionType.BodyCompetition[]>>
+  setCompetition: Dispatch<SetStateAction<CompetitionType.BodyCompetition[]>>;
+  expanded: string | false;
+  handleChange: (panel: string) => (event: React.ChangeEvent<{}>, isExpanded: boolean) => void;
 }
 
 const bem = block('accordion-item');
@@ -20,6 +22,8 @@ export const AccordionItem: React.FC<Props> = ({
   title,
   id,
   setCompetition,
+  expanded,
+  handleChange,
   children
 }) => {
   const classes = useStyle();
@@ -33,7 +37,7 @@ export const AccordionItem: React.FC<Props> = ({
   }
 
   return (
-    <Accordion>
+    <Accordion expanded={id === expanded} onChange={handleChange(id)}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1a-content"

@@ -16,7 +16,12 @@ const bem = block('competition-page');
 
 export const Presenter: React.FC<Props> = ({ role  }) => {
 	const [open, setOpen] = useState<boolean>(false);
+	const [expanded, setExpanded] = React.useState<string | false>(false);
 	const {data, setData} = useCompetitionPage();
+
+	const handleChange = (panel: string) => (event: React.ChangeEvent<{}>, isExpanded: boolean) => {
+		setExpanded(isExpanded ? panel : false);
+	};
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -44,6 +49,8 @@ export const Presenter: React.FC<Props> = ({ role  }) => {
 								key={data.id}
 								setCompetition={setData}
 								id={data.id}
+								expanded={expanded}
+								handleChange={handleChange}
 							>
 								<Competition competition={data} setCompetition={setData}/>
 							</AccordionItem>
