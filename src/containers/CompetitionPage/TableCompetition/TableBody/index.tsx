@@ -7,6 +7,7 @@ import {TableRowList} from "../TableRowList";
 import {TableRowTotal} from "../TableRowTotal";
 import {Competition as CompetitionType} from "../../../../types/competition";
 import {Stage as StageVariant, Stage} from "../../../../constants/stage";
+import {sortRacers} from "../../helper";
 
 interface Props {
   racers: Racer.Data[];
@@ -25,9 +26,11 @@ export const TableBody: React.FC<Props> = ({
   stage,
   currentStage
 }) => {
+  const preparedRacers = variantTable === VariantTable.TOTAL ? sortRacers(racers) : racers;
+
   return (
     <MaterialTableBody>
-      {variantTable === VariantTable.STAGE && racers.length && racers.map(racer => (
+      {variantTable === VariantTable.STAGE && preparedRacers.length && preparedRacers.map(racer => (
         <TableRow
           key={racer.person.id}
           racer={racer}
@@ -37,7 +40,7 @@ export const TableBody: React.FC<Props> = ({
           setCompetition={setCompetition}
         />
       ))}
-      {variantTable === VariantTable.RECORD && racers.length && racers.map(racer => (
+      {variantTable === VariantTable.RECORD && preparedRacers.length && preparedRacers.map(racer => (
         <TableRowList
           key={racer.person.id}
           racer={racer}
@@ -47,7 +50,7 @@ export const TableBody: React.FC<Props> = ({
           stage={stage}
         />
       ))}
-      {variantTable === VariantTable.TOTAL && racers.length && racers.map(racer => (
+      {variantTable === VariantTable.TOTAL && preparedRacers.length && preparedRacers.map(racer => (
         <TableRowTotal racer={racer} key={racer.person.id}/>
       ))}
     </MaterialTableBody>
