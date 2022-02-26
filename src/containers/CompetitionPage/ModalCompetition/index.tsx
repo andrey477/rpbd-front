@@ -22,16 +22,16 @@ export const ModalCompetition: React.FC<Props> = ({
 	handleClose,
 	setCompetition,
 }) => {
-	const { handleSubmit, values, handleChange } = useFormik<Competition.Request>({
+	const { handleSubmit, values, handleChange, setValues, initialValues } = useFormik<Competition.Request>({
 		initialValues: {
 			name: '',
 			attempts: 2,
 		},
 		onSubmit: async (values) => {
-			console.log(values)
 			const response = await createCompetition(values);
 			if (response.length) {
 				setCompetition(response);
+				await setValues(initialValues);
 				handleClose();
 			}
 		}
